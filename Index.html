@@ -68,7 +68,7 @@
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-100 selection:text-brand-900">
 
   <!-- ========================================================================= -->
-  <!-- KONFIGURASI APLIKASI (Ubah Nilai ini sesuai Deployment Anda)              -->
+  <!-- KONFIGURASI APLIKASI                                                      -->
   <!-- ========================================================================= -->
   <script>
     const APP_CONFIG = {
@@ -79,8 +79,7 @@
       SPREADSHEET_ID: "148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk",
       
       // Google OAuth Client ID (Daftarkan Authorized JavaScript Origins: https://binacahya-nest.github.io)
-      // Ganti dengan Client ID resmi Anda dari Google Cloud Console
-      GOOGLE_CLIENT_ID: "1048472918471-samplecidapps.googleusercontent.com",
+      GOOGLE_CLIENT_ID: "YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com",
       
       // Nama Lembaga & Hak Cipta
       ORG_NAME: "Paseban Tri Panca Tunggal",
@@ -162,7 +161,6 @@
               <button class="w-9 h-9 rounded-full bg-emerald-600/40 border-2 border-emerald-400/50 flex items-center justify-center text-white overflow-hidden text-sm font-bold">
                 <span id="userAvatarText">PA</span>
               </button>
-              <!-- Dropdown Logout -->
               <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 hidden group-hover:block border border-slate-100 z-50 text-slate-700">
                 <div class="px-4 py-2 text-xs border-b border-slate-100">
                   <p class="font-semibold text-slate-800" id="userEmailDropdown">-</p>
@@ -288,7 +286,7 @@
         </div>
       </div>
 
-      <!-- Panduan Alur Integrasi Google -->
+      <!-- Protokol Keamanan & Alur Hak Akses -->
       <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-6">
         <h3 class="text-base font-bold text-slate-800 mb-4 flex items-center space-x-2">
           <span class="material-symbols-outlined text-brand-800">security</span>
@@ -754,10 +752,10 @@
         </button>
       </div>
 
-      <!-- LEMBAR CETAK STANDAR A4 (AKAN DICETAK DI KERTAS FISIK) -->
+      <!-- LEMBAR CETAK STANDAR A4 -->
       <div class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-300 max-w-4xl mx-auto print:border-none print:shadow-none print:p-0">
         
-        <!-- KOP SURAT FORMAL RESMI ADAT -->
+        <!-- KOP SURAT RESMI -->
         <div class="border-b-4 border-double border-slate-900 pb-4 mb-6 flex items-center justify-between">
           <div class="w-16 h-16 border-2 border-slate-800 rounded-lg flex items-center justify-center text-slate-800 font-serif font-bold text-2xl">
             AKUR
@@ -874,10 +872,6 @@
           </h2>
           <p class="text-xs text-slate-500">Otorisasi aparatur adat berdasarkan akun Google Identity Services (GSI)</p>
         </div>
-        <button onclick="bukaModalTambahPetugas()" class="px-3.5 py-1.5 rounded-lg bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold transition flex items-center space-x-1.5">
-          <span class="material-symbols-outlined text-base">person_add</span>
-          <span>Tambah Petugas Baru</span>
-        </button>
       </div>
 
       <!-- Tabel DB_HAK_AKSES -->
@@ -945,9 +939,8 @@
 
       <!-- Tombol Resmi Google Identity Services -->
       <div class="flex flex-col items-center justify-center p-4 bg-slate-50 rounded-xl border border-slate-200 mb-6">
-        <!-- Render Otomatis Tombol Google Sign-in -->
         <div id="g_id_onload"
-             data-client_id="1048472918471-samplecidapps.googleusercontent.com"
+             data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
              data-context="signin"
              data-ux_mode="popup"
              data-callback="handleCredentialResponse"
@@ -1025,15 +1018,12 @@
   <!-- 6. LOGIKA JAVASCRIPT LENGKAP & INTEGRASI BACKEND GAS                      -->
   <!-- ========================================================================= -->
   <script>
-    // State Pengguna Global
     let currentUser = null;
 
-    // Inisialisasi Aplikasi Saat Memuat Halaman
     document.addEventListener("DOMContentLoaded", () => {
       cekSesiTersimpan();
     });
 
-    // Pindah Tab Navigasi
     function switchTab(tabId) {
       const tabs = ['dashboard', 'form38', 'database', 'download', 'hak_akses'];
       tabs.forEach(t => {
@@ -1055,7 +1045,6 @@
       }
     }
 
-    // Modal Login
     function openLoginModal() {
       document.getElementById('modalLogin').classList.remove('hidden');
     }
@@ -1063,7 +1052,7 @@
       document.getElementById('modalLogin').classList.add('hidden');
     }
 
-    // 1. Tangani Respon Token Kredensial dari Google Identity Services (GSI)
+    // 1. Tangani Respon Token Google GSI
     function handleCredentialResponse(response) {
       try {
         const jwtToken = response.credential;
@@ -1071,16 +1060,12 @@
         const userEmail = payload.email;
         const userName = payload.name;
         
-        console.log("Token Google Diterima:", userEmail);
-        
-        // Verifikasi email ke backend Google Apps Script (DB_HAK_AKSES)
         verifikasiHakAksesKeBackend(userEmail, userName);
       } catch (err) {
         alert("Gagal memproses kredensial Google: " + err.message);
       }
     }
 
-    // Decode JWT Google
     function parseJwt(token) {
       const base64Url = token.split('.')[1];
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -1090,12 +1075,10 @@
       return JSON.parse(jsonPayload);
     }
 
-    // Verifikasi ke Google Apps Script (DB_HAK_AKSES)
+    // Verifikasi Akun ke Apps Script (DB_HAK_AKSES)
     function verifikasiHakAksesKeBackend(email, name) {
-      // Menampilkan indikator memuat
       showLog("// Memeriksa izin akun ke Google Apps Script DB_HAK_AKSES...");
       
-      // Kirim POST ke GAS
       fetch(APP_CONFIG.GAS_ENDPOINT_URL, {
         method: "POST",
         body: JSON.stringify({
@@ -1114,7 +1097,6 @@
           closeLoginModal();
           alert("Selamat datang, " + name + "! Peran Adat: " + (data.role || 'Petugas'));
         } else {
-          // Jika email belum ada di sheet DB_HAK_AKSES, berikan fallback role pengujian
           tetapkanSesiUser({
             email: email,
             name: name,
@@ -1125,7 +1107,6 @@
         }
       })
       .catch(err => {
-        console.warn("Koneksi GAS offline/CORS, mengaktifkan sesi lokal: ", err);
         tetapkanSesiUser({
           email: email,
           name: name,
@@ -1135,13 +1116,11 @@
       });
     }
 
-    // Simulasi Login Cepat untuk Demo Repositori
     function simulasiLogin(email, name, role) {
       tetapkanSesiUser({ email, name, role });
       closeLoginModal();
     }
 
-    // Simpan & Render Sesi User
     function tetapkanSesiUser(user) {
       currentUser = user;
       localStorage.setItem("SIDMA_USER", JSON.stringify(user));
@@ -1157,7 +1136,6 @@
       document.getElementById('userAvatarText').innerText = user.name.slice(0, 2).toUpperCase();
     }
 
-    // Cek Sesi Tersimpan
     function cekSesiTersimpan() {
       const saved = localStorage.getItem("SIDMA_USER");
       if (saved) {
@@ -1168,7 +1146,6 @@
       }
     }
 
-    // Logout
     function handleLogout() {
       localStorage.removeItem("SIDMA_USER");
       currentUser = null;
@@ -1178,7 +1155,6 @@
       window.location.reload();
     }
 
-    // Hitung Umur Otomatis
     function hitungUmurOtomatis() {
       const birth = document.getElementById('fieldTanggalLahir').value;
       if (!birth) return;
@@ -1186,13 +1162,12 @@
       const today = new Date();
       let age = today.getFullYear() - bDate.getFullYear();
       const m = today.getMonth() - bDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < bDate.getDate())) {
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         age--;
       }
       document.getElementById('fieldUmur').value = age > 0 ? (age + " Tahun") : "0 Tahun";
     }
 
-    // Logika Kondisional: Sembunyikan Perusahaan jika 'Tidak Bekerja'
     function toggleKondisiPekerjaan() {
       const status = document.getElementById('fieldStatusBekerja').value;
       const wrap1 = document.getElementById('wrapperPerusahaan1');
@@ -1218,7 +1193,6 @@
       }
     }
 
-    // Isi Data Simulasi Otomatis
     function isiDataContohOtomatis() {
       const f = document.getElementById('formWarga38');
       f.NAMA_LENGKAP.value = "Asep Surya Kancana";
@@ -1261,7 +1235,6 @@
       alert("Data simulasi 38 kolom berhasil diisikan ke formulir!");
     }
 
-    // Tampilkan Log
     function showLog(msg) {
       const panel = document.getElementById('responsePanel');
       const text = document.getElementById('responseLogText');
@@ -1269,7 +1242,6 @@
       text.innerText = msg;
     }
 
-    // Ping Backend GAS
     function testPingGas() {
       showLog("// Menguji respon koneksi server Google Apps Script doGet()...\nEndpoint: " + APP_CONFIG.GAS_ENDPOINT_URL);
       fetch(APP_CONFIG.GAS_ENDPOINT_URL)
@@ -1282,7 +1254,6 @@
         });
     }
 
-    // Kirim Simulasi Dry Run Saja
     function kirimSimulasiDryRun() {
       const form = document.getElementById('formWarga38');
       const formData = new FormData(form);
@@ -1299,11 +1270,10 @@
         showLog("// RESPON SIMULASI VALIDASI:\n" + JSON.stringify(res, null, 2));
       })
       .catch(err => {
-        showLog("// Catatan: Pengiriman via URL Encoded Fallback...\n" + err);
+        showLog("// Respon Fallback: " + err);
       });
     }
 
-    // Submit Form Resmi ke Google Apps Script (Menambah Baris ke Google Sheets)
     function handleFormSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById('btnSubmitForm');
@@ -1331,11 +1301,10 @@
       .catch(err => {
         btn.innerHTML = originalText;
         btn.disabled = false;
-        showLog("// Terjadi kendala saat pengiriman langsung:\n" + err.message + "\n\n💡 Saran: Pastikan Google Apps Script di-deploy dengan opsi 'Who has access: Anyone'.");
+        showLog("// Terjadi kendala saat pengiriman:\n" + err.message);
       });
     }
 
-    // Filter Tabel
     function filterTabelWarga() {
       const input = document.getElementById("filterInput").value.toUpperCase();
       const tr = document.getElementById("tabelWargaBody").getElementsByTagName("tr");
@@ -1345,7 +1314,6 @@
       }
     }
 
-    // Cetak Profil KTA
     function cetakProfilWarga(nama, nik, dusun, trah) {
       alert(`Mencetak Kartu Registrasi Adat:\nNama: ${nama}\nNIK: ${nik}\nDusun: ${dusun}\nTrah: ${trah}`);
       window.print();
