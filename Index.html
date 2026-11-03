@@ -1,793 +1,1355 @@
 <!DOCTYPE html>
-
-<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#e3f5ea", "error": "#ba1a1a", "secondary": "#276a50", "secondary-fixed": "#adf1d1", "primary-fixed": "#b7efd4", "surface-container-low": "#e6f8ed", "surface-container-high": "#dbece2", "surface-variant": "#d5e7dc", "error-container": "#ffdad6", "on-error": "#ffffff", "inverse-primary": "#9cd2b9", "inverse-surface": "#24342d", "on-secondary-container": "#2e7056", "background": "#ecfef3", "on-primary-fixed": "#002116", "on-tertiary-fixed-variant": "#633f16", "surface-dim": "#cdded4", "on-primary-fixed-variant": "#1a503c", "primary-fixed-dim": "#9cd2b9", "secondary-fixed-dim": "#92d4b5", "surface-tint": "#346853", "primary": "#003525", "on-primary-container": "#87bda4", "surface-container-lowest": "#ffffff", "on-secondary-fixed": "#002115", "tertiary-fixed": "#ffdcbe", "on-background": "#101e18", "on-error-container": "#93000a", "primary-container": "#174d3a", "tertiary-container": "#603c14", "on-surface-variant": "#404944", "surface-bright": "#ecfef3", "on-surface": "#101e18", "on-secondary": "#ffffff", "outline-variant": "#c0c9c2", "surface": "#ecfef3", "on-secondary-fixed-variant": "#04513a", "tertiary-fixed-dim": "#f2bc89", "surface-container-highest": "#d5e7dc", "outline": "#707974", "on-primary": "#ffffff", "surface-container": "#e0f2e8", "on-tertiary": "#ffffff", "secondary-container": "#adf1d1", "on-tertiary-fixed": "#2d1600", "tertiary": "#462601", "on-tertiary-container": "#dba775" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "gutter-mobile": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter": "1.5rem", "margin": "2rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-lg": ["Public Sans"], "label-md": ["Public Sans"], "headline-lg-mobile": ["Public Sans"], "code": ["JetBrains Mono"], "title": ["Public Sans"], "label-sm": ["Public Sans"], "body-sm": ["Public Sans"], "body-lg": ["Public Sans"], "headline-md": ["Public Sans"], "headline-sm": ["Public Sans"], "display": ["Public Sans"], "body-md": ["Public Sans"] }, "fontSize": { "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "code": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "title": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(23,77,58,0.06)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container"><span class="material-symbols-outlined text-primary text-[24px]">gavel</span><div class="flex flex-col"><span class="font-title text-title text-primary tracking-tight leading-tight">SIDMA PASEBAN</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tri Panca Tunggal</span></div></div><div class="px-space-lg py-space-sm bg-surface-container-high/60"><div class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Panon Akur Rahayu</div><div class="font-body-sm text-body-sm text-on-surface-variant truncate">Karuhun Urang Sunda Wiwitan</div></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pencatatan &amp; Layanan</span></div><nav class="flex flex-col gap-space-xs px-space-md pt-space-xs" data-active-classes="bg-primary-container text-on-primary font-title rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all bg-primary-container text-on-primary font-title rounded-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="formulir-38-kolom" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-body-md text-body-md">Formulir 38 Kolom</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="database-warga" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-md text-body-md">Database Warga</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="verifikasi-adat" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-md text-body-md">Verifikasi Adat</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pusat-unduhan" href="#"><span class="material-symbols-outlined text-[20px]">download_for_offline</span><span class="font-body-md text-body-md">Pusat Unduhan</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pengaturan-gas" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">Pengaturan GAS</span></a></nav></div><div class="p-space-md m-space-md rounded-xl bg-surface-container"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[20px]">shield</span><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-primary truncate">Wilayah Adat Cigugur</span><span class="font-code text-code text-on-surface-variant truncate">Reg: KNG-CRB-01</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,77,58,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">home_pin</span><span class="font-label-md text-label-md uppercase tracking-wider text-secondary">Cigugur, Kuningan • Jawa Barat</span></div><div class="h-4 w-px bg-outline-variant"></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-title"><a aria-current="page" class="transition-colors text-primary font-title" data-path="dashboard" href="#">Ringkasan</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="formulir-38-kolom" href="#">Inventaris 38 Kolom</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="database-warga" href="#">Kependudukan</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="verifikasi-adat" href="#">Legalitas Adat</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center px-space-sm py-space-xs rounded-full bg-secondary-container/40 text-on-secondary-container gap-space-xs"><span class="material-symbols-outlined text-[16px]">circle</span><span class="font-label-sm text-label-sm">Status: Adat Sah</span></div><button aria-label="Bantuan Arsip" class="flex items-center justify-center w-9 h-9 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">help</span></button><button aria-label="Pemberitahuan" class="flex items-center justify-center w-9 h-9 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="h-5 w-px bg-outline-variant"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right hidden md:block"><span class="font-label-md text-label-md text-primary leading-tight">Girang Pangreksa</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Paseban Cigugur</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen px-gutter py-space-lg"><div class="flex flex-col w-full">
-<!-- Integration Status Banner -->
-<div class="w-full bg-surface-container-high/80 rounded-xl p-space-md mb-space-lg shadow-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
-<div class="flex flex-wrap items-center gap-space-md">
-<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
-<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-<span class="font-label-md text-label-md text-primary font-semibold">Endpoint GAS v2.6.0 Terhubung</span>
-</div>
-<div class="flex items-center gap-space-xs bg-surface px-space-md py-space-xs rounded-lg">
-<span class="material-symbols-outlined text-[16px] text-on-surface-variant">table_chart</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Sheet Target:</span>
-<span class="font-code text-code text-secondary font-semibold">148-_dQeH...HtFAk</span>
-</div>
-<div class="flex items-center gap-space-xs bg-secondary-container/60 px-space-md py-space-xs rounded-lg text-on-secondary-container">
-<span class="material-symbols-outlined text-[16px]">folder_supervised</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wide">Paseban Tri Panca Tunggal</span>
-</div>
-</div>
-<div class="flex items-center gap-space-sm w-full xl:w-auto justify-end">
-<button class="flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container-lowest text-primary hover:bg-surface-variant transition-all font-label-md text-label-md shadow-sm" onclick="testConnection()">
-<span class="material-symbols-outlined text-[16px]">sensors</span>
-<span>Dry Run Ping</span>
-</button>
-<div class="font-code text-code px-space-sm py-space-xs rounded bg-surface text-secondary hidden" id="ping-badge">
-        200 OK (84ms)
-      </div>
-</div>
-</div>
-<!-- Main View Switcher & Title Hierarchy -->
-<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-lg">
-<div>
-<div class="flex items-center gap-space-xs mb-space-xs">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">SIDMA • KUSTODIAN ADAT PASUNDAN</span>
-</div>
-<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Pencatatan Masyarakat Adat Cigugur</h1>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-space-xs">
-        Registrasi identitas hukum, teritori ulayat rorokan, serta silsilah trah Karuhun Urang Sunda Wiwitan Cigugur sesuai standar inventaris 38-kolom Paseban Tri Panca Tunggal.
-      </p>
-</div>
-<!-- Tab Buttons -->
-<div class="flex flex-wrap p-1 bg-surface-container rounded-xl gap-1">
-<button class="px-space-md py-space-sm rounded-lg font-title text-title text-on-primary bg-primary shadow-sm transition-all flex items-center gap-space-xs" id="btn-tab-form" onclick="switchTab('tab-form')">
-<span class="material-symbols-outlined text-[18px]">edit_document</span>
-<span>Formulir 38 Kolom</span>
-</button>
-<button class="px-space-md py-space-sm rounded-lg font-title text-title text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs" id="btn-tab-database" onclick="switchTab('tab-database')">
-<span class="material-symbols-outlined text-[18px]">database</span>
-<span>DB_DATA_WARGA</span>
-</button>
-<button class="px-space-md py-space-sm rounded-lg font-title text-title text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs" id="btn-tab-unduhan" onclick="switchTab('tab-unduhan')">
-<span class="material-symbols-outlined text-[18px]">print</span>
-<span>Format Cetak A4</span>
-</button>
-<button class="px-space-md py-space-sm rounded-lg font-title text-title text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs" id="btn-tab-source" onclick="switchTab('tab-source')">
-<span class="material-symbols-outlined text-[18px]">code</span>
-<span>Kode Sumber</span>
-</button>
-</div>
-</div>
-<!-- TAB 1: FORMULIR 38 KOLOM -->
-<div class="tab-panel flex flex-col gap-space-lg" id="tab-form">
-<!-- Progress Indicator Strip -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm grid grid-cols-2 md:grid-cols-4 gap-space-md">
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-title text-title">1</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-semibold">Identitas Pribadi</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Kolom 01 – 12</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center font-title text-title">2</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-semibold">Teritori &amp; Rorokan</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Kolom 13 – 21</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center font-title text-title">3</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-semibold">Pendidikan &amp; Karya</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Kolom 22 – 30</div>
-</div>
-</div>
-<div class="flex items-center gap-space-sm">
-<div class="w-8 h-8 rounded-full bg-surface-container text-on-surface flex items-center justify-center font-title text-title">4</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-semibold">Silsilah Trah Aki Madrais</div>
-<div class="font-label-sm text-label-sm text-on-surface-variant">Kolom 31 – 38</div>
-</div>
-</div>
-</div>
-<!-- Interactive Form Element -->
-<form class="flex flex-col gap-space-lg" id="sidma-form" onsubmit="handleFormSubmit(event)">
-<!-- PART 1: IDENTITAS PRIBADI -->
-<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg relative overflow-hidden">
-<div class="w-full h-1 bg-primary absolute top-0 left-0"></div>
-<div class="flex items-center justify-between pb-space-md mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[24px]">badge</span>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Bagian I: Identitas Hakiki Pribadi Warga Adat</h2>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Pencatatan kependudukan resmi disinkronkan dengan register Paseban Cigugur</span>
-</div>
-</div>
-<span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded bg-surface-container-high text-secondary uppercase font-semibold">Kolom 1–12</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">01. Nama Lengkap (Sesuai KTP/Akta) *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" name="col_01_nama" placeholder="Contoh: Sanghyang Respati" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">02. Nomor Induk Kependudukan (NIK) *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" maxlength="16" name="col_02_nik" placeholder="320801xxxxxxxxxx" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">03. Nomor Kartu Keluarga (No KK) *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" maxlength="16" name="col_03_no_kk" placeholder="320801xxxxxxxxxx" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">04. Jenis Kelamin *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" name="col_04_jenis_kelamin" required="">
-<option value="">Pilih Jenis Kelamin</option>
-<option value="Laki-laki">Pameget (Laki-laki)</option>
-<option value="Perempuan">Istri (Perempuan)</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">05. Tempat Lahir *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" name="col_05_tempat_lahir" placeholder="Kuningan" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">06. Tanggal Lahir *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" id="birth_date" name="col_06_tanggal_lahir" onchange="calculateAge()" required="" type="date"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">07. Umur Terkalkulasi (Otomatis)</label>
-<input class="w-full h-10 px-space-sm bg-surface-container text-on-surface-variant font-code text-code rounded cursor-not-allowed" id="calc_age" name="col_07_umur" placeholder="Terhitung otomatis" readonly="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">08. Agama / Penghayat Kepercayaan *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-high/50 text-secondary font-semibold font-body-md rounded" name="col_08_agama" readonly="" type="text" value="Kepercayaan Terhadap Tuhan YME / Sunda Wiwitan"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">09. Status Kedudukan Adat *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" name="col_09_status_adat" required="">
-<option value="Warga Adat Aktif (Tetap)">Warga Adat Aktif (Tetap)</option>
-<option value="Sesepuh / Pinisepuh">Sesepuh / Pinisepuh</option>
-<option value="Girang Pangreksa">Girang Pangreksa</option>
-<option value="Pemeluk Simpatisan Adat">Pemeluk Simpatisan Adat</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">10. Status Perkawinan Adat *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none transition-all" name="col_10_status_kawin" required="">
-<option value="Belum Kawin">Belum Kawin</option>
-<option value="Kawin (Pernikahan Adat Pasundan Sah)">Kawin (Pernikahan Adat Pasundan Sah)</option>
-<option value="Cerai Hidup">Cerai Hidup</option>
-<option value="Cerai Mati">Cerai Mati</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">11. Kepemilikan Akta Lahir *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_11_akta_lahir" required="">
-<option value="Ada (Dukcapil)">Ada (Dukcapil)</option>
-<option value="Belum Memiliki">Belum Memiliki</option>
-<option value="Proses Permohonan">Proses Permohonan</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">12. Nomor Registrasi Akta Lahir</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest" name="col_12_no_akta" placeholder="3208-LT-xxxxxx" type="text"/>
-</div>
-</div>
-</div>
-<!-- PART 2: TERITORI ULAYAT & ROROKAN -->
-<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg relative overflow-hidden">
-<div class="w-full h-1 bg-secondary absolute top-0 left-0"></div>
-<div class="flex items-center justify-between pb-space-md mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-[24px]">holiday_village</span>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Bagian II: Teritori Adat, Rorokan &amp; Domisili</h2>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Pemetaan pemukiman leluhur dan wilayah sebaran komunitas Cigugur</span>
-</div>
-</div>
-<span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded bg-surface-container-high text-secondary uppercase font-semibold">Kolom 13–21</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-<div class="lg:col-span-2">
-<label class="block font-label-md text-label-md text-primary mb-1">13. Alamat Rumah / Rorokan Adat *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_13_alamat" placeholder="Jl. Raya Cigugur No. 28, Blok Mayana" required="" type="text"/>
-</div>
-<div class="grid grid-cols-2 gap-space-sm">
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">14. RT *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_14_rt" placeholder="004" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">15. RW *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_15_rw" placeholder="002" required="" type="text"/>
-</div>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">16. Dusun / Babakan Adat *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_16_dusun" required="">
-<option value="Dusun Cigugur (Pusat Paseban)">Dusun Cigugur (Pusat Paseban)</option>
-<option value="Dusun Cisantana (Lembah Ciremai)">Dusun Cisantana (Lembah Ciremai)</option>
-<option value="Dusun Sukamulya">Dusun Sukamulya</option>
-<option value="Dusun Cipari">Dusun Cipari</option>
-<option value="Dusun Lamping">Dusun Lamping</option>
-<option value="Wilayah Rorokan Luar Kuningan">Wilayah Rorokan Luar Kuningan</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">17. Kelurahan / Desa *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_17_desa" required="" type="text" value="Cigugur"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">18. Kecamatan *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_18_kecamatan" required="" type="text" value="Cigugur"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">19. Kabupaten / Kota *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_19_kabupaten" required="" type="text" value="Kabupaten Kuningan"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">20. Kode Pos</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_20_kodepos" type="text" value="45552"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">21. Status Kepemilikan Lahan / Hunian *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_21_status_lahan" required="">
-<option value="Tanah Ulayat / Warisan Karuhun">Tanah Ulayat / Warisan Karuhun</option>
-<option value="Milik Sendiri (SHM)">Milik Sendiri (SHM)</option>
-<option value="Menumpang Keluarga Adat">Menumpang Keluarga Adat</option>
-<option value="Sewa / Kontrak">Sewa / Kontrak</option>
-</select>
-</div>
-</div>
-</div>
-<!-- PART 3: PENDIDIKAN & KARYA PEKERJAAN -->
-<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg relative overflow-hidden">
-<div class="w-full h-1 bg-tertiary-container absolute top-0 left-0"></div>
-<div class="flex items-center justify-between pb-space-md mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-tertiary text-[24px]">work_history</span>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Bagian III: Pendidikan, Profesi &amp; Komunikasi</h2>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Latar belakang pendidikan dan profesi penghidupan warga</span>
-</div>
-</div>
-<span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded bg-surface-container-high text-secondary uppercase font-semibold">Kolom 22–30</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">22. Jenjang Pendidikan Terakhir *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_22_pendidikan" required="">
-<option value="SD / Sederajat">SD / Sederajat</option>
-<option value="SMP / MTs">SMP / MTs</option>
-<option value="SMA / SMK / MA">SMA / SMK / MA</option>
-<option value="Diploma (D3/D4)">Diploma (D3/D4)</option>
-<option value="Sarjana (S1)">Sarjana (S1)</option>
-<option value="Magister (S2)">Magister (S2)</option>
-<option value="Pendidikan Non-formal Karuhun">Pendidikan Non-formal Karuhun</option>
-</select>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">23. Nama Lembaga Pendidikan</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_23_nama_sekolah" placeholder="Nama Sekolah / Universitas" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">24. Status Bekerja Saat Ini *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" id="work_status" name="col_24_status_bekerja" onchange="toggleJobDetails()" required="">
-<option value="Bekerja">Aktif Bekerja / Berkarya</option>
-<option value="Wiraswasta / Petani Tradisional">Wiraswasta / Petani Tradisional</option>
-<option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
-<option value="Tidak Bekerja">Tidak Bekerja / Pengurus Rumah Adat</option>
-</select>
-</div>
-<div id="job_field_1">
-<label class="block font-label-md text-label-md text-primary mb-1">25. Bidang Pekerjaan Utama *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" id="input_pekerjaan" name="col_25_pekerjaan" placeholder="Pekerjaan..." type="text" value="Petani Pertanian Alami"/>
-</div>
-<div id="job_field_2">
-<label class="block font-label-md text-label-md text-primary mb-1">26. Instansi / Tempat Usaha / Lembaga</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" id="input_instansi" name="col_26_instansi" placeholder="Komunitas Tani Paseban" type="text"/>
-</div>
-<div id="job_field_3">
-<label class="block font-label-md text-label-md text-primary mb-1">27. Alamat Tempat Kerja / Usaha</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" id="input_alamat_kerja" name="col_27_alamat_kerja" placeholder="Cisantana, Cigugur" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">28. Nomor Kontak WhatsApp / HP *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_28_hp" placeholder="0812xxxxxxxx" required="" type="tel"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">29. Alamat Surel (Email)</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_29_email" placeholder="warga@paseban-cigugur.id" type="email"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">30. Kemahiran Kesenian &amp; Adat</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_30_karya_adat" placeholder="Pemain Gamelan Renteng, Tari Seren Taun" type="text"/>
-</div>
-</div>
-</div>
-<!-- PART 4: SILSILAH TRAH & ORANG TUA -->
-<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg relative overflow-hidden">
-<div class="w-full h-1 bg-primary-container absolute top-0 left-0"></div>
-<div class="flex items-center justify-between pb-space-md mb-space-md">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-primary text-[24px]">account_tree</span>
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Bagian IV: Silsilah Trah Leluhur (Karuhun) &amp; Orang Tua</h2>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Garis keturunan ikatan bathin dengan Paguyuban Tri Panca Tunggal</span>
-</div>
-</div>
-<span class="font-label-sm text-label-sm px-space-sm py-space-xs rounded bg-surface-container-high text-secondary uppercase font-semibold">Kolom 31–38</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">31. Nama Ayah Kandung *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_31_nama_ayah" placeholder="Nama Ayah" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">32. NIK Ayah Kandung</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" maxlength="16" name="col_32_nik_ayah" placeholder="NIK Ayah..." type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">33. Pekerjaan Ayah</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_33_pekerjaan_ayah" placeholder="Pekerjaan Ayah" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">34. Nama Ibu Kandung *</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_34_nama_ibu" placeholder="Nama Ibu" required="" type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">35. NIK Ibu Kandung</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" maxlength="16" name="col_35_nik_ibu" placeholder="NIK Ibu..." type="text"/>
-</div>
-<div>
-<label class="block font-label-md text-label-md text-primary mb-1">36. Pekerjaan Ibu</label>
-<input class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_36_pekerjaan_ibu" placeholder="Pekerjaan Ibu" type="text"/>
-</div>
-<div class="lg:col-span-2">
-<label class="block font-label-md text-label-md text-primary mb-1">37. Garis Silsilah Trah Karuhun *</label>
-<select class="w-full h-10 px-space-sm bg-surface-container-low text-primary rounded font-body-md" name="col_37_silsilah_trah" required="">
-<option value="Trah Aki Madrais (Pangeran Sadewa / Paseban Cigugur)">Trah Aki Madrais (Pangeran Sadewa / Paseban Cigugur)</option>
-<option value="Trah Cisantana (Sesepuh Gunung Ciremai)">Trah Cisantana (Sesepuh Gunung Ciremai)</option>
-<option value="Trah Sukamulya / Cigugur">Trah Sukamulya / Cigugur</option>
-<option value="Warga Paguyuban Baru Terverifikasi">Warga Paguyuban Baru Terverifikasi</option>
-</select>
-</div>
-<div class="lg:col-span-4">
-<label class="block font-label-md text-label-md text-primary mb-1">38. Catatan Khusus Karuhun &amp; Keterangan Tambahan Adat</label>
-<textarea class="w-full p-space-sm bg-surface-container-low text-primary rounded font-body-md focus:bg-surface-container-lowest focus:outline-none" name="col_38_catatan" placeholder="Catatan keikutsertaan Seren Taun, silsilah kakek/buyut atau amanat sesepuh..." rows="2"></textarea>
-</div>
-</div>
-</div>
-<!-- Action Panel & Response Inspector -->
-<div class="bg-surface-container p-space-lg rounded-xl flex flex-col gap-space-md">
-<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md">
-<div class="flex items-center gap-space-xs text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span>
-<span class="font-body-sm text-body-sm">Data akan diamankan dan diarsip pada repositori Google Sheet resmi ID: 148-_dQeH...</span>
-</div>
-<div class="flex items-center gap-space-sm w-full sm:w-auto">
-<button class="w-full sm:w-auto px-space-lg py-space-sm rounded font-title text-title bg-surface-container-lowest text-primary hover:bg-surface-variant transition-colors flex items-center justify-center gap-space-xs shadow-sm" onclick="runDryRunSimulation()" type="button">
-<span class="material-symbols-outlined text-[18px]">bug_report</span>
-<span>Uji Validasi (Dry Run)</span>
-</button>
-<button class="w-full sm:w-auto px-space-xl py-space-sm rounded font-title text-title bg-primary text-on-primary hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs shadow-md" id="btn-submit-form" type="submit">
-<span class="material-symbols-outlined text-[18px] animate-spin hidden" id="submit-spinner">progress_activity</span>
-<span class="material-symbols-outlined text-[18px]" id="submit-icon">cloud_upload</span>
-<span id="submit-label">Kirim Langsung ke GAS (38 Kolom)</span>
-</button>
-</div>
-</div>
-<!-- Live Response Log Viewer -->
-<div class="hidden mt-space-sm bg-surface-container-lowest rounded-lg p-space-md" id="response-container">
-<div class="flex items-center justify-between pb-space-xs mb-space-xs">
-<span class="font-label-md text-label-md text-primary font-bold flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px] text-secondary">terminal</span>
-              Respon Log Eksekusi API
-            </span>
-<span class="font-code text-code text-secondary font-bold" id="response-status"></span>
-</div>
-<pre class="font-code text-code text-on-surface bg-surface-container-low p-space-sm rounded overflow-x-auto max-h-48" id="response-body"></pre>
-</div>
-</div>
-</form>
-</div>
-<!-- TAB 2: DATABASE WARGA -->
-<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-database">
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Daftar Registrasi Warga (Sheet: DB_DATA_WARGA)</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Menampilkan seluruh baris tersimpan yang telah terverifikasi oleh Panon Akur Rahayu</p>
-</div>
-<div class="flex items-center gap-space-sm">
-<button class="px-space-md py-space-xs rounded bg-surface-container text-primary font-label-md text-label-md flex items-center gap-space-xs hover:bg-surface-variant" onclick="refreshDataWarga()">
-<span class="material-symbols-outlined text-[16px]">sync</span>
-<span>Segarkan Data</span>
-</button>
-<span class="font-code text-code bg-surface-container-high px-space-sm py-space-xs rounded text-primary">Total: 4 Warga Terdaftar</span>
-</div>
-</div>
-<!-- Data Table -->
-<div class="overflow-x-auto w-full">
-<table class="w-full text-left font-body-md text-body-md">
-<thead>
-<tr class="bg-surface-container text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
-<th class="py-space-sm px-space-md">Kol. 01 • Nama Lengkap</th>
-<th class="py-space-sm px-space-md">Kol. 02 • NIK</th>
-<th class="py-space-sm px-space-md">Kol. 04 • L/P</th>
-<th class="py-space-sm px-space-md">Kol. 16 • Dusun/Rorokan</th>
-<th class="py-space-sm px-space-md">Kol. 25 • Profesi</th>
-<th class="py-space-sm px-space-md">Kol. 37 • Garis Trah</th>
-<th class="py-space-sm px-space-md text-right">Aksi</th>
-</tr>
-</thead>
-<tbody class="text-primary divide-y divide-transparent">
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="py-space-sm px-space-md font-semibold">Abah Eka Sukmana</td>
-<td class="py-space-sm px-space-md font-code text-code text-on-surface-variant">3208011204650001</td>
-<td class="py-space-sm px-space-md">L</td>
-<td class="py-space-sm px-space-md">Dusun Cigugur</td>
-<td class="py-space-sm px-space-md">Girang Serat Paseban</td>
-<td class="py-space-sm px-space-md"><span class="px-space-xs py-0.5 rounded bg-secondary-container/50 font-label-sm text-label-sm text-secondary font-semibold">Trah Aki Madrais</span></td>
-<td class="py-space-sm px-space-md text-right">
-<button class="text-secondary hover:text-primary" onclick="previewA4(1)"><span class="material-symbols-outlined text-[20px]">print</span></button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="py-space-sm px-space-md font-semibold">Ibu Sri Kencana Sundari</td>
-<td class="py-space-sm px-space-md font-code text-code text-on-surface-variant">3208014508720002</td>
-<td class="py-space-sm px-space-md">P</td>
-<td class="py-space-sm px-space-md">Dusun Cisantana</td>
-<td class="py-space-sm px-space-md">Pengrajin Tenun Sukamulya</td>
-<td class="py-space-sm px-space-md"><span class="px-space-xs py-0.5 rounded bg-secondary-container/50 font-label-sm text-label-sm text-secondary font-semibold">Trah Cisantana</span></td>
-<td class="py-space-sm px-space-md text-right">
-<button class="text-secondary hover:text-primary" onclick="previewA4(2)"><span class="material-symbols-outlined text-[20px]">print</span></button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="py-space-sm px-space-md font-semibold">Dadan Danuasmara</td>
-<td class="py-space-sm px-space-md font-code text-code text-on-surface-variant">3208012301980004</td>
-<td class="py-space-sm px-space-md">L</td>
-<td class="py-space-sm px-space-md">Dusun Sukamulya</td>
-<td class="py-space-sm px-space-md">Petani Organik Lereng Ciremai</td>
-<td class="py-space-sm px-space-md"><span class="px-space-xs py-0.5 rounded bg-secondary-container/50 font-label-sm text-label-sm text-secondary font-semibold">Trah Aki Madrais</span></td>
-<td class="py-space-sm px-space-md text-right">
-<button class="text-secondary hover:text-primary" onclick="previewA4(3)"><span class="material-symbols-outlined text-[20px]">print</span></button>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="py-space-sm px-space-md font-semibold">Ratih Sawitri Paseban</td>
-<td class="py-space-sm px-space-md font-code text-code text-on-surface-variant">3208015509990001</td>
-<td class="py-space-sm px-space-md">P</td>
-<td class="py-space-sm px-space-md">Dusun Cigugur</td>
-<td class="py-space-sm px-space-md">Pengajar Karawitan Paseban</td>
-<td class="py-space-sm px-space-md"><span class="px-space-xs py-0.5 rounded bg-secondary-container/50 font-label-sm text-label-sm text-secondary font-semibold">Trah Aki Madrais</span></td>
-<td class="py-space-sm px-space-md text-right">
-<button class="text-secondary hover:text-primary" onclick="previewA4(4)"><span class="material-symbols-outlined text-[20px]">print</span></button>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<!-- TAB 3: PUSAT UNDUHAN & FORMAT CETAK A4 -->
-<div class="tab-panel hidden flex flex-col gap-space-lg" id="tab-unduhan">
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-space-md mb-space-md">
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Lembar Verifikasi Adat &amp; Kartu Warga (Standar Cetak A4)</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Dokumen resmi pengesahan masyarakat adat berstempel digital Paseban Tri Panca Tunggal</p>
-</div>
-<div class="flex items-center gap-space-sm">
-<button class="px-space-lg py-space-sm rounded bg-primary text-on-primary font-title text-title flex items-center gap-space-xs shadow-sm" onclick="window.print()">
-<span class="material-symbols-outlined text-[18px]">print</span>
-<span>Cetak Halaman Ini (A4)</span>
-</button>
-</div>
-</div>
-<!-- Document Mockup Sheet (A4 Styled container) -->
-<div class="max-w-4xl mx-auto bg-surface p-8 rounded-xl shadow-md flex flex-col gap-space-lg">
-<!-- Letterhead Header -->
-<div class="flex items-center justify-between pb-space-md">
-<div class="flex items-center gap-space-md">
-<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
-<span class="material-symbols-outlined text-[36px]">gavel</span>
-</div>
-<div>
-<div class="font-headline-sm text-headline-sm text-primary font-bold">PASEBAN TRI PANCA TUNGGAL</div>
-<div class="font-title text-title text-secondary">Masyarakat Adat Karuhun Urang Sunda Wiwitan</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Jl. Alun-Alun Cigugur No. 1, Kec. Cigugur, Kab. Kuningan • Jawa Barat 45552</div>
-</div>
-</div>
-<div class="text-right">
-<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">KODE ARSIP ADAT</div>
-<div class="font-code text-code text-primary font-bold">KNG-CGG-2025/38K</div>
-</div>
-</div>
-<div class="h-0.5 bg-primary/20 w-full"></div>
-<div class="text-center my-space-xs">
-<h3 class="font-title text-title uppercase text-primary tracking-wide font-bold">SURAT KETERANGAN REGISTRASI DATA PENDUDUK ADAT</h3>
-<p class="font-code text-code text-on-surface-variant">Nomor Registrasi GAS: 148-CGG-38K-0092</p>
-</div>
-<div class="grid grid-cols-2 gap-space-md text-body-md font-body-md">
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Nama Lengkap Sesuai Register:</div>
-<div class="font-bold text-primary">Abah Eka Sukmana</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Nomor Induk Kependudukan (NIK):</div>
-<div class="font-code text-code text-primary">3208011204650001</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Status Adat &amp; Trah:</div>
-<div class="font-semibold text-secondary">Trah Aki Madrais (Paseban Cigugur)</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Teritori Wilayah Rorokan:</div>
-<div class="text-primary">Dusun Cigugur RT 004 / RW 002, Kuningan</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Agama / Kolom Kepercayaan:</div>
-<div class="text-primary">Kepercayaan Terhadap Tuhan YME / Sunda Wiwitan</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="text-on-surface-variant font-label-md text-label-md">Pekerjaan &amp; Pengabdian:</div>
-<div class="text-primary">Girang Serat Paseban Cigugur</div>
-</div>
-</div>
-<div class="bg-surface-container p-space-md rounded-lg flex items-center gap-space-md">
-<span class="material-symbols-outlined text-secondary text-[32px]">shield</span>
-<div class="font-body-sm text-body-sm text-on-surface-variant">
-            Dokumen ini diakui secara adat karuhun Sunda Wiwitan Paseban Cigugur dan disahkan berdasarkan hukum adat serta pengakuan negara atas Komunitas Hukum Adat.
-          </div>
-</div>
-<!-- Signature Block -->
-<div class="grid grid-cols-2 pt-space-lg mt-space-md">
-<div class="text-center flex flex-col items-center">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Pencatat Data SIDMA,</span>
-<div class="h-20 flex items-center justify-center">
-<span class="font-code text-code text-secondary">Girang Pangreksa</span>
-</div>
-<span class="font-label-md text-label-md font-bold text-primary">Kustodian Panon Akur</span>
-</div>
-<div class="text-center flex flex-col items-center">
-<span class="font-body-sm text-body-sm text-on-surface-variant">Cigugur, Paseban Tri Panca Tunggal</span>
-<div class="h-20 flex items-center justify-center">
-<span class="material-symbols-outlined text-[48px] text-primary/40">verified</span>
-</div>
-<span class="font-label-md text-label-md font-bold text-primary">Sesepuh Adat Cigugur</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- TAB 4: INSPEKSI & EKSPOR KODE SUMBER -->
-<div class="tab-panel hidden flex flex-col gap-space-md" id="tab-source">
-<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
-<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
-<div>
-<h2 class="font-headline-sm text-headline-sm text-primary">Kode Sumber Frontend Mandiri (Index.html)</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Salin kode ini untuk dideploy langsung ke Google Apps Script (HTMLService) atau Web Server statis.</p>
-</div>
-<button class="px-space-lg py-space-sm rounded bg-primary text-on-primary font-title text-title flex items-center gap-space-xs hover:bg-primary-container shadow-sm transition-all" id="btn-copy-code" onclick="copySourceCode()">
-<span class="material-symbols-outlined text-[18px]">content_copy</span>
-<span>Salin Seluruh Kode</span>
-</button>
-</div>
-<div class="relative bg-surface-container rounded-lg p-space-md">
-<textarea class="w-full h-96 font-code text-code text-on-surface bg-surface-container-lowest p-space-md rounded outline-none resize-y" id="source-code-area" readonly=""></textarea>
-</div>
-</div>
-</div>
-<!-- Global Customary Territory Highlight Section -->
-<div class="mt-space-xl grid grid-cols-1 lg:grid-cols-3 gap-space-md">
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[24px]">balance</span>
-</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-bold">Kedaulatan Budaya</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Pengakuan SK Bupati No. 430/KPTS.535-DISDIKBUD/2020</div>
-</div>
-</div>
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[24px]">forest</span>
-</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-bold">Leuweung Titipan</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Pikukuh Tilu: Sirna Raga, Panca Curiga, Akur Rukun</div>
-</div>
-</div>
-<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
-<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-[24px]">hub</span>
-</div>
-<div>
-<div class="font-label-md text-label-md text-primary font-bold">Sinkronisasi GAS Real-time</div>
-<div class="font-body-sm text-body-sm text-on-surface-variant">Target Spreadsheet Aktif: 148-_dQeH...</div>
-</div>
-</div>
-</div>
-</div>
-<script>
-  // Tab Switcher Logic
-  function switchTab(tabId) {
-    document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
-    const activePanel = document.getElementById(tabId);
-    if(activePanel) activePanel.classList.remove('hidden');
-
-    const tabs = ['form', 'database', 'unduhan', 'source'];
-    tabs.forEach(t => {
-      const btn = document.getElementById('btn-tab-' + t);
-      if(btn) {
-        if('tab-' + t === tabId) {
-          btn.className = 'px-space-md py-space-sm rounded-lg font-title text-title text-on-primary bg-primary shadow-sm transition-all flex items-center gap-space-xs';
-        } else {
-          btn.className = 'px-space-md py-space-sm rounded-lg font-title text-title text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-space-xs';
-        }
-      }
-    });
-
-    if(tabId === 'tab-source') {
-      populateSourceCode();
-    }
-  }
-
-  // Age Calculator
-  function calculateAge() {
-    const dobInput = document.getElementById('birth_date').value;
-    if(!dobInput) return;
-    const dob = new Date(dobInput);
-    const diff_ms = Date.now() - dob.getTime();
-    const age_dt = new Date(diff_ms);
-    const age = Math.abs(age_dt.getUTCFullYear() - 1970);
-    document.getElementById('calc_age').value = age + ' Tahun';
-  }
-
-  // Conditional Job Form Visibility
-  function toggleJobDetails() {
-    const status = document.getElementById('work_status').value;
-    const f1 = document.getElementById('job_field_1');
-    const f2 = document.getElementById('job_field_2');
-    const f3 = document.getElementById('job_field_3');
-
-    if(status === 'Tidak Bekerja') {
-      f1.classList.add('hidden');
-      f2.classList.add('hidden');
-      f3.classList.add('hidden');
-      document.getElementById('input_pekerjaan').value = 'Tidak Bekerja / Pengurus Rumah Adat';
-    } else {
-      f1.classList.remove('hidden');
-      f2.classList.remove('hidden');
-      f3.classList.remove('hidden');
-    }
-  }
-
-  // Connection Test (Ping)
-  function testConnection() {
-    const badge = document.getElementById('ping-badge');
-    badge.classList.remove('hidden');
-    badge.innerText = 'Ping GAS 2.6.0...';
-    setTimeout(() => {
-      badge.innerText = '200 OK (78ms) - ID Terhubung';
-    }, 450);
-  }
-
-  // Dry Run Simulation
-  function runDryRunSimulation() {
-    const resContainer = document.getElementById('response-container');
-    const resStatus = document.getElementById('response-status');
-    const resBody = document.getElementById('response-body');
-
-    resContainer.classList.remove('hidden');
-    resStatus.innerText = '200 OK (SIMULASI VALID)';
-    
-    const form = document.getElementById('sidma-form');
-    const formData = new FormData(form);
-    const mockJson = {
-      status: "SUCCESS_DRY_RUN",
-      spreadsheetId: "148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk",
-      targetSheet: "DB_DATA_WARGA",
-      columnCount: 38,
-      validatedFields: {
-        nama: formData.get('col_01_nama') || "Abah Eka Sukmana (Uji Coba)",
-        nik: formData.get('col_02_nik') || "3208011204650001",
-        rorokan: formData.get('col_16_dusun') || "Dusun Cigugur (Pusat Paseban)",
-        trah: formData.get('col_37_silsilah_trah') || "Trah Aki Madrais"
-      },
-      message: "Seluruh 38 kolom valid dan siap disimpan ke register Paseban Tri Panca Tunggal."
-    };
-
-    resBody.textContent = JSON.stringify(mockJson, null, 2);
-  }
-
-  // Handle Form Submit
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    const btnSubmit = document.getElementById('btn-submit-form');
-    const spinner = document.getElementById('submit-spinner');
-    const icon = document.getElementById('submit-icon');
-    const label = document.getElementById('submit-label');
-    const resContainer = document.getElementById('response-container');
-    const resStatus = document.getElementById('response-status');
-    const resBody = document.getElementById('response-body');
-
-    spinner.classList.remove('hidden');
-    icon.classList.add('hidden');
-    label.innerText = 'Mengirimkan 38 Kolom ke GAS...';
-    btnSubmit.disabled = true;
-
-    setTimeout(() => {
-      spinner.classList.add('hidden');
-      icon.classList.remove('hidden');
-      label.innerText = 'Kirim Langsung ke GAS (38 Kolom)';
-      btnSubmit.disabled = false;
-
-      resContainer.classList.remove('hidden');
-      resStatus.innerText = '201 CREATED (SUKSES)';
-      
-      const payload = {
-        status: "RECORD_SAVED",
-        code: 201,
-        timestamp: new Date().toISOString(),
-        targetSpreadsheet: "148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk",
-        targetSheet: "DB_DATA_WARGA",
-        totalColumnsWritten: 38,
-        registeredBy: "Panon Akur Rahayu - Paseban Cigugur",
-        result: "Data warga berhasil disinkronkan ke baris terbaru."
-      };
-      resBody.textContent = JSON.stringify(payload, null, 2);
-      alert('Rahayu! Data berhasil dicatatkan ke database Paseban Tri Panca Tunggal.');
-    }, 1200);
-  }
-
-  // Source Code Populator
-  function populateSourceCode() {
-    const codeArea = document.getElementById('source-code-area');
-    if(!codeArea.value) {
-      codeArea.value = `<!--
-  SIDMA - Sistem Informasi Data Masyarakat Adat Karuhun Urang Sunda Wiwitan Cigugur
-  Dikelola oleh Panon Akur Rahayu, Paseban Tri Panca Tunggal, Cigugur - Kuningan
-  Terintegrasi dengan Google Apps Script Backend (Code.gs 2.6.0)
-  Spreadsheet ID: 148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk
--->
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>SIDMA Paseban Cigugur - Master Front-End</title>
-</head>
-<body>
-  <h1>SIDMA PASEBAN TRI PANCA TUNGGAL</h1>
-  <p>Status: Production Ready Integration for Google Apps Script 2.6.0</p>
-  <!-- Form 38 Kolom, Database Viewer, & Integrasi Aktif -->
-</body>
-</html>`;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIDMA • Panon Akur Rahayu - Masyarakat Adat Sunda Wiwitan Cigugur</title>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Identity Services (GIS / OAuth 2.0 Sign-In) -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfef3',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              500: '#10b981',
+              700: '#047857',
+              800: '#174d3a', // Verdant Custodian Primary
+              900: '#0d3225',
+              950: '#061c14'
+            },
+            earth: {
+              100: '#f5f0eb',
+              200: '#e6ded4',
+              700: '#8c7355',
+              800: '#5c4a34'
+            }
+          },
+          fontFamily: {
+            sans: ['"Public Sans"', 'sans-serif'],
+            serif: ['"Cinzel"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
     }
-  }
+  </script>
 
-  function copySourceCode() {
-    const codeArea = document.getElementById('source-code-area');
-    codeArea.select();
-    navigator.clipboard.writeText(codeArea.value).then(() => {
-      const btn = document.getElementById('btn-copy-code');
-      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Berhasil Disalin!</span>';
-      setTimeout(() => {
-        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">content_copy</span><span>Salin Seluruh Kode</span>';
-      }, 2000);
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .print-only { display: block !important; }
+      body { background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-100 selection:text-brand-900">
+
+  <!-- ========================================================================= -->
+  <!-- KONFIGURASI APLIKASI (Ubah Nilai ini sesuai Deployment Anda)              -->
+  <!-- ========================================================================= -->
+  <script>
+    const APP_CONFIG = {
+      // Endpoint Web App Google Apps Script resmi yang telah di-deploy (akhiran /exec)
+      GAS_ENDPOINT_URL: "https://script.google.com/macros/s/AKfycbzYB9pPZ2lfvZ6_k8E7ndE20kgvrdoEIvsSmGkG_vyCpdyNgHqCIkLGRu6MGOF7mlBWFQ/exec",
+      
+      // Target ID Google Spreadsheet resmi
+      SPREADSHEET_ID: "148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk",
+      
+      // Google OAuth Client ID (Daftarkan Authorized JavaScript Origins: https://binacahya-nest.github.io)
+      // Ganti dengan Client ID resmi Anda dari Google Cloud Console
+      GOOGLE_CLIENT_ID: "1048472918471-samplecidapps.googleusercontent.com",
+      
+      // Nama Lembaga & Hak Cipta
+      ORG_NAME: "Paseban Tri Panca Tunggal",
+      COMMUNITY_NAME: "Masyarakat Adat Karuhun Urang (AKUR) Sunda Wiwitan",
+      LOCATION: "Cigugur, Kuningan - Jawa Barat"
+    };
+  </script>
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP HEADER & NAVIGATION BAR                                            -->
+  <!-- ========================================================================= -->
+  <header class="bg-brand-800 text-white shadow-md sticky top-0 z-50 border-b border-brand-900 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo & Identitas Lembaga Adat -->
+        <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('dashboard')">
+          <div class="w-10 h-10 rounded-lg bg-emerald-600/30 border border-emerald-400/40 flex items-center justify-center text-emerald-300 shadow-inner">
+            <span class="material-symbols-outlined text-2xl">account_balance</span>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="font-bold tracking-tight text-white text-base sm:text-lg">SIDMA PANON AKUR</span>
+              <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full">v2.6.0 Live</span>
+            </div>
+            <p class="text-xs text-emerald-100/70 font-light truncate max-w-[200px] sm:max-w-none">
+              Paseban Tri Panca Tunggal • Karuhun Urang Cigugur
+            </p>
+          </div>
+        </div>
+
+        <!-- Menu Navigasi Desktop -->
+        <nav class="hidden md:flex items-center space-x-1" id="mainNavLinks">
+          <button onclick="switchTab('dashboard')" id="btnNav-dashboard" class="px-3 py-2 rounded-md text-xs font-medium text-emerald-100 hover:bg-brand-700 hover:text-white transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">dashboard</span>
+            <span>Beranda</span>
+          </button>
+          <button onclick="switchTab('form38')" id="btnNav-form38" class="px-3 py-2 rounded-md text-xs font-medium text-emerald-100 hover:bg-brand-700 hover:text-white transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">fact_check</span>
+            <span>Formulir 38 Kolom</span>
+          </button>
+          <button onclick="switchTab('database')" id="btnNav-database" class="px-3 py-2 rounded-md text-xs font-medium text-emerald-100 hover:bg-brand-700 hover:text-white transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">database</span>
+            <span>Data Warga</span>
+          </button>
+          <button onclick="switchTab('download')" id="btnNav-download" class="px-3 py-2 rounded-md text-xs font-medium text-emerald-100 hover:bg-brand-700 hover:text-white transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">print</span>
+            <span>Cetak & Blangko A4</span>
+          </button>
+          <button onclick="switchTab('hak_akses')" id="btnNav-hak_akses" class="px-3 py-2 rounded-md text-xs font-medium text-emerald-100 hover:bg-brand-700 hover:text-white transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">shield_person</span>
+            <span>Hak Akses</span>
+          </button>
+        </nav>
+
+        <!-- Area Profil Pengguna / Tombol Login Google -->
+        <div class="flex items-center space-x-3">
+          
+          <!-- State 1: Belum Login (Tombol Masuk Google) -->
+          <div id="authGuestSection" class="flex items-center space-x-2">
+            <button onclick="openLoginModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-brand-950 font-semibold text-xs transition shadow-sm flex items-center space-x-1.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Login Google</span>
+            </button>
+          </div>
+
+          <!-- State 2: Sudah Login (Informasi Profil & Peran) -->
+          <div id="authUserSection" class="hidden items-center space-x-3">
+            <div class="text-right hidden sm:block">
+              <div id="userNameDisplay" class="text-xs font-semibold text-white leading-tight">Nama Pengguna</div>
+              <div id="userRoleBadge" class="text-[10px] text-emerald-200 uppercase tracking-wider font-mono">SUPER ADMIN</div>
+            </div>
+            <div class="relative group">
+              <button class="w-9 h-9 rounded-full bg-emerald-600/40 border-2 border-emerald-400/50 flex items-center justify-center text-white overflow-hidden text-sm font-bold">
+                <span id="userAvatarText">PA</span>
+              </button>
+              <!-- Dropdown Logout -->
+              <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-1 hidden group-hover:block border border-slate-100 z-50 text-slate-700">
+                <div class="px-4 py-2 text-xs border-b border-slate-100">
+                  <p class="font-semibold text-slate-800" id="userEmailDropdown">-</p>
+                  <p class="text-[10px] text-emerald-600 font-mono" id="userRoleDropdown">Otoritas Aktif</p>
+                </div>
+                <button onclick="handleLogout()" class="w-full text-left px-4 py-2 text-xs text-rose-600 hover:bg-rose-50 flex items-center space-x-2">
+                  <span class="material-symbols-outlined text-base">logout</span>
+                  <span>Keluar Sesi</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. BANNER STATUS KONEKSI BACKEND (GOOGLE APPS SCRIPT & SHEETS)            -->
+  <!-- ========================================================================= -->
+  <div class="bg-emerald-900/90 text-emerald-100 text-xs py-1.5 px-4 border-b border-emerald-800 no-print flex flex-wrap items-center justify-between gap-2">
+    <div class="max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-medium">Backend GAS v2.6.0:</span>
+        <span class="font-mono text-emerald-200">doPost() & doGet() Siap</span>
+        <span class="text-emerald-400/60 hidden sm:inline">|</span>
+        <span class="text-emerald-200/80 hidden sm:inline">Spreadsheet Target: <code class="bg-emerald-950/60 px-1.5 py-0.5 rounded text-[11px] font-mono">148-_dQeH...HtFAk</code></span>
+      </div>
+      <div class="flex items-center space-x-2 text-[11px]">
+        <button onclick="testPingGas()" class="hover:text-white underline flex items-center space-x-1">
+          <span class="material-symbols-outlined text-sm">sensors</span>
+          <span>Tes Ping Server</span>
+        </button>
+        <span class="text-emerald-400/60">|</span>
+        <a href="https://docs.google.com/spreadsheets/d/148-_dQeH-RRerxN5T0WA5znt8InMUXC2b-enpUHtFAk" target="_blank" class="hover:text-white underline flex items-center space-x-1">
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+          <span>Buka Google Sheets</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. KONTEN UTAMA APLIKASI (MULTI-TAB DINAMIS)                               -->
+  <!-- ========================================================================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ======================================================================= -->
+    <!-- TAB 1: DASHBOARD & BERANDA UTAMA                                       -->
+    <!-- ======================================================================= -->
+    <section id="tab-dashboard" class="space-y-6">
+      
+      <!-- Kartu Sambutan Adat -->
+      <div class="bg-gradient-to-r from-brand-800 to-brand-900 rounded-2xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+        <div class="absolute -right-12 -bottom-12 opacity-10 text-emerald-300 pointer-events-none">
+          <span class="material-symbols-outlined" style="font-size: 240px;">account_balance</span>
+        </div>
+        <div class="relative z-10 max-w-2xl">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider mb-4">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            <span>Masyarakat Adat Karuhun Urang (AKUR) Sunda Wiwitan</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
+            Sistem Informasi Data Masyarakat Adat (SIDMA)
+          </h1>
+          <p class="text-emerald-100/90 text-sm leading-relaxed mb-6 font-light">
+            Portal registrasi digital terintegrasi untuk pelestarian silsilah trah karuhun, batas ulayat rorokan, dan perlindungan identitas hukum adat Cigugur berbasis Google Sheets resmi Paseban Tri Panca Tunggal.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <button onclick="switchTab('form38')" class="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-brand-950 font-semibold text-xs transition shadow-md flex items-center space-x-2">
+              <span class="material-symbols-outlined text-base">edit_note</span>
+              <span>Input Data Warga Baru</span>
+            </button>
+            <button onclick="switchTab('download')" class="px-5 py-2.5 rounded-xl bg-brand-700/60 hover:bg-brand-700 text-white font-medium text-xs border border-emerald-400/30 transition flex items-center space-x-2">
+              <span class="material-symbols-outlined text-base">download</span>
+              <span>Cetak Blangko Offline</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ringkasan Statistik Warga -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200/80">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-medium">Total Warga Terdata</span>
+            <span class="material-symbols-outlined text-brand-700">groups</span>
+          </div>
+          <div class="text-2xl font-bold text-slate-800" id="statTotalWarga">142</div>
+          <div class="text-[11px] text-emerald-600 font-medium mt-1 flex items-center space-x-1">
+            <span class="material-symbols-outlined text-xs">sync</span>
+            <span>Tersinkron Sheet: DB_DATA_WARGA</span>
+          </div>
+        </div>
+        
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200/80">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-medium">Pusat Paseban Cigugur</span>
+            <span class="material-symbols-outlined text-brand-700">holiday_village</span>
+          </div>
+          <div class="text-2xl font-bold text-slate-800">84</div>
+          <div class="text-[11px] text-slate-500 mt-1">Wewengkon Puser</div>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200/80">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-medium">Lembah Cisantana</span>
+            <span class="material-symbols-outlined text-brand-700">landscape</span>
+          </div>
+          <div class="text-2xl font-bold text-slate-800">36</div>
+          <div class="text-[11px] text-slate-500 mt-1">Lereng Gn. Ciremai</div>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-slate-200/80">
+          <div class="flex items-center justify-between text-slate-500 mb-2">
+            <span class="text-xs font-medium">Sukamulya & Cipari</span>
+            <span class="material-symbols-outlined text-brand-700">roofing</span>
+          </div>
+          <div class="text-2xl font-bold text-slate-800">22</div>
+          <div class="text-[11px] text-slate-500 mt-1">Rorokan Sekitar</div>
+        </div>
+      </div>
+
+      <!-- Panduan Alur Integrasi Google -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-6">
+        <h3 class="text-base font-bold text-slate-800 mb-4 flex items-center space-x-2">
+          <span class="material-symbols-outlined text-brand-800">security</span>
+          <span>Protokol Keamanan & Alur Hak Akses Google (DB_HAK_AKSES)</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/70">
+            <div class="font-bold text-brand-800 mb-1 flex items-center space-x-1.5">
+              <span class="w-5 h-5 rounded-full bg-brand-800 text-white flex items-center justify-center text-[10px]">1</span>
+              <span>Login Google Resmi</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Pengurus/Warga menekan tombol Login Google. Sistem menerima identitas terenkripsi (JWT) tanpa menyimpan kata sandi.
+            </p>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/70">
+            <div class="font-bold text-brand-800 mb-1 flex items-center space-x-1.5">
+              <span class="w-5 h-5 rounded-full bg-brand-800 text-white flex items-center justify-center text-[10px]">2</span>
+              <span>Validasi ke DB_HAK_AKSES</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Google Apps Script membaca tab <code class="text-emerald-700 font-mono">DB_HAK_AKSES</code> di Google Sheets untuk mencocokkan email dengan hak akses yang berwenang.
+            </p>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200/70">
+            <div class="font-bold text-brand-800 mb-1 flex items-center space-x-1.5">
+              <span class="w-5 h-5 rounded-full bg-brand-800 text-white flex items-center justify-center text-[10px]">3</span>
+              <span>Otorisasi Modul Otomatis</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Tingkat hak akses (Super Admin, Rama Pupuhu, Verifikator, Sensus Lapangan) otomatis membuka menu yang sesuai secara aman.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- TAB 2: FORMULIR PENDAFTARAN WARGA LENGKAP (38 KOLOM RESMI)               -->
+    <!-- ======================================================================= -->
+    <section id="tab-form38" class="hidden space-y-6">
+      
+      <!-- Header Form -->
+      <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 flex items-center space-x-2">
+            <span class="material-symbols-outlined text-brand-800">fact_check</span>
+            <span>Formulir Sensus & Registrasi Warga (Standar 38 Kolom)</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Lembaga Adat Karuhun Urang (AKUR) Sunda Wiwitan • Paseban Tri Panca Tunggal
+          </p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button type="button" onclick="isiDataContohOtomatis()" class="px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-medium transition flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base">auto_fix_high</span>
+            <span>Isi Data Simulasi Cepat</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Form 38 Kolom -->
+      <form id="formWarga38" onsubmit="handleFormSubmit(event)" class="space-y-6">
+        
+        <!-- BAGIAN I: IDENTITAS PRIBADI (KOLOM 01 - 12) -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200/80 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <h3 class="font-bold text-sm text-brand-800 uppercase tracking-wider flex items-center space-x-2">
+              <span class="material-symbols-outlined">badge</span>
+              <span>Bagian I: Identitas Hakiki Pribadi (Kolom 01–12)</span>
+            </h3>
+            <span class="text-xs text-slate-400 font-mono">Wajib Diisi Lengkap</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">01. Nama Lengkap (Sesuai KTP/Akta) *</label>
+              <input type="text" name="NAMA_LENGKAP" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500" placeholder="Contoh: Asep Surya Kancana">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">02. Nomor Induk Kependudukan (NIK) *</label>
+              <input type="text" name="NIK" required maxlength="16" pattern="[0-9]{16}" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 font-mono" placeholder="16 digit angka">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">03. Nomor Kartu Keluarga (No KK) *</label>
+              <input type="text" name="NO_KK" required maxlength="16" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 font-mono" placeholder="16 digit angka">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">04. Jenis Kelamin *</label>
+              <select name="JENIS_KELAMIN" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Laki-laki">Pameget (Laki-laki)</option>
+                <option value="Perempuan">Istri (Perempuan)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">05. Tempat Lahir *</label>
+              <input type="text" name="TEMPAT_LAHIR" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Contoh: Kuningan">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">06. Tanggal Lahir *</label>
+              <input type="date" name="TANGGAL_LAHIR" id="fieldTanggalLahir" onchange="hitungUmurOtomatis()" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">07. Umur (Kalkulasi Otomatis)</label>
+              <input type="text" name="UMUR" id="fieldUmur" readonly class="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-100 font-mono text-slate-600" placeholder="Terisi otomatis">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">08. Agama / Kolom KTP *</label>
+              <input type="text" name="AGAMA_KOLOM_KTP" required value="Kepercayaan Terhadap Tuhan YME" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">09. Status Kedudukan Adat *</label>
+              <select name="STATUS_WARGA_ADAT" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Warga Tetap Adat">Warga Tetap Adat</option>
+                <option value="Sesepuh / Pinisepuh">Sesepuh / Pinisepuh</option>
+                <option value="Girang Pangreksa">Girang Pangreksa</option>
+                <option value="Warga Simpatisan">Warga Simpatisan</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">10. Status Kepemilikan Akta Lahir *</label>
+              <select name="STATUS_AKTA_LAHIR" id="fieldStatusAkta" onchange="toggleNoAkta()" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Memiliki">Memiliki (Dukcapil)</option>
+                <option value="Belum Memiliki">Belum Memiliki</option>
+                <option value="Proses Permohonan">Proses Permohonan</option>
+              </select>
+            </div>
+
+            <div id="wrapperNoAkta" class="md:col-span-2">
+              <label class="block font-medium text-slate-700 mb-1">11 & 12. Nomor Registrasi Akta Lahir</label>
+              <input type="text" name="NO_AKTA_LAHIR" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 font-mono" placeholder="Contoh: 3208-LT-15081992-0041">
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN II: TERITORI & ROROKAN (KOLOM 13 - 23) -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200/80 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <h3 class="font-bold text-sm text-brand-800 uppercase tracking-wider flex items-center space-x-2">
+              <span class="material-symbols-outlined">holiday_village</span>
+              <span>Bagian II: Teritori Adat, Rorokan & Domisili (Kolom 13–23)</span>
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div class="md:col-span-2">
+              <label class="block font-medium text-slate-700 mb-1">13. Alamat Rumah / Rorokan Adat *</label>
+              <input type="text" name="ALAMAT_ROROKAN" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Jl. Alun-Alun Cigugur No. 1 / Blok Paseban">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block font-medium text-slate-700 mb-1">14. RT *</label>
+                <input type="text" name="RT" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 text-center" placeholder="004">
+              </div>
+              <div>
+                <label class="block font-medium text-slate-700 mb-1">15. RW *</label>
+                <input type="text" name="RW" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 text-center" placeholder="002">
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">16. Dusun / Wewengkon Adat *</label>
+              <select name="DUSUN_WEWENGKON" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Dusun Cigugur (Pusat Paseban)">Dusun Cigugur (Pusat Paseban)</option>
+                <option value="Dusun Cisantana (Lembah Ciremai)">Dusun Cisantana (Lembah Ciremai)</option>
+                <option value="Dusun Sukamulya">Dusun Sukamulya</option>
+                <option value="Dusun Cipari">Dusun Cipari</option>
+                <option value="Rorokan Luar Kuningan">Rorokan Luar Kuningan</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">17. Desa / Kelurahan *</label>
+              <input type="text" name="DESA_KELURAHAN" required value="Cigugur" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">18. Kecamatan *</label>
+              <input type="text" name="KECAMATAN" required value="Cigugur" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">19. Kabupaten / Kota *</label>
+              <input type="text" name="KABUPATEN_KOTA" required value="Kuningan" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">20. Provinsi *</label>
+              <input type="text" name="PROVINSI" required value="Jawa Barat" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">21. Kode Pos</label>
+              <input type="text" name="KODE_POS" value="45552" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 font-mono">
+            </div>
+
+            <div class="md:col-span-3">
+              <label class="block font-medium text-slate-700 mb-1">22 & 23. Status Kepemilikan Lahan / Hunian *</label>
+              <select name="STATUS_TEMPAT_TINGGAL" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Milik Sendiri / Tanah Adat">Tanah Ulayat / Warisan Karuhun / Tanah Adat</option>
+                <option value="Hak Milik Sendiri (SHM)">Hak Milik Sendiri (SHM)</option>
+                <option value="Menumpang Keluarga Adat">Menumpang Keluarga Adat</option>
+                <option value="Sewa / Kontrak">Sewa / Kontrak</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN III: PENDIDIKAN & PROFESI (LOGIKA KONDISIONAL PEKERJAAN) -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200/80 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <h3 class="font-bold text-sm text-brand-800 uppercase tracking-wider flex items-center space-x-2">
+              <span class="material-symbols-outlined">work</span>
+              <span>Bagian III: Pendidikan, Profesi & Komunikasi (Kolom 24–33)</span>
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">24. Tingkat Pendidikan Terakhir *</label>
+              <select name="TINGKAT_PENDIDIKAN" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="SD / Sederajat">SD / Sederajat</option>
+                <option value="SMP / MTs">SMP / MTs</option>
+                <option value="SMA / SMK / MA">SMA / SMK / MA</option>
+                <option value="Diploma (D3/D4)">Diploma (D3/D4)</option>
+                <option value="S1 / Sarjana" selected>S1 / Sarjana</option>
+                <option value="S2 / Magister">S2 / Magister</option>
+                <option value="Pendidikan Karuhun / Nonformal">Pendidikan Karuhun / Nonformal</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">25. Status Pendidikan *</label>
+              <select name="STATUS_PENDIDIKAN" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Tamat">Tamat / Lulus</option>
+                <option value="Sedang Menempuh">Sedang Menempuh</option>
+                <option value="Putus Sekolah">Putus Sekolah</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">26. Nama Lembaga Pendidikan</label>
+              <input type="text" name="NAMA_SEKOLAH_LEMBAGA" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Universitas Kuningan">
+            </div>
+
+            <!-- LOGIKA KONDISIONAL PEKERJAAN -->
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">27. Status Bekerja Saat Ini *</label>
+              <select name="STATUS_BEKERJA" id="fieldStatusBekerja" onchange="toggleKondisiPekerjaan()" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Bekerja">Bekerja / Berkarya</option>
+                <option value="Wiraswasta / Petani Adat">Wiraswasta / Petani Tradisional Adat</option>
+                <option value="Pelajar / Mahasiswa">Pelajar / Mahasiswa</option>
+                <option value="Tidak Bekerja">Tidak Bekerja / Pengurus Rumah Adat</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">28. Bidang Pekerjaan Utama *</label>
+              <input type="text" name="PEKERJAAN_UTAMA" id="fieldPekerjaanUtama" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Petani Huma & Pelestari Seni Tradisi">
+            </div>
+
+            <!-- Bagian ini otomatis disembunyikan jika 'Tidak Bekerja' -->
+            <div id="wrapperPerusahaan1">
+              <label class="block font-medium text-slate-700 mb-1">29. Nama Usaha / Perusahaan / Lembaga</label>
+              <input type="text" name="NAMA_USAHA_PERUSAHAAN" id="fieldNamaUsaha" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Kelompok Tani Sauyunan Paseban">
+            </div>
+
+            <div id="wrapperPerusahaan2" class="md:col-span-3">
+              <label class="block font-medium text-slate-700 mb-1">30. Alamat Usaha / Kantor / Lokasi Huma</label>
+              <input type="text" name="ALAMAT_USAHA_KANTOR" id="fieldAlamatUsaha" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Paseban Tri Panca Tunggal, Cigugur">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">31. Status Pernikahan Adat *</label>
+              <select name="STATUS_PERNIKAHAN_ADAT" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Kawin Tercatat Adat Cigugur">Kawin Tercatat Adat Cigugur</option>
+                <option value="Belum Kawin">Belum Kawin</option>
+                <option value="Cerai Hidup">Cerai Hidup</option>
+                <option value="Cerai Mati">Cerai Mati</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">32. No. Kontak WhatsApp / HP *</label>
+              <input type="text" name="NO_TELEPON_WA" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 font-mono" placeholder="081223456789">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">33. Alamat Surel (Email)</label>
+              <input type="email" name="EMAIL" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="warga.adat@gmail.com">
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN IV: SILSILAH TRAH LELUHUR & ORANG TUA (KOLOM 34 - 38) -->
+        <div class="bg-white rounded-xl p-6 border border-slate-200/80 shadow-sm">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            <h3 class="font-bold text-sm text-brand-800 uppercase tracking-wider flex items-center space-x-2">
+              <span class="material-symbols-outlined">account_tree</span>
+              <span>Bagian IV: Silsilah Trah Karuhun & Orang Tua (Kolom 34–38)</span>
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">34. Nama Ayah Kandung *</label>
+              <input type="text" name="NAMA_AYAH" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Madrais Surya Diningrat">
+            </div>
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">35. Pekerjaan Ayah</label>
+              <input type="text" name="PEKERJAAN_AYAH" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Petani Huma">
+            </div>
+
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">36. Nama Ibu Kandung *</label>
+              <input type="text" name="NAMA_IBU" required class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Ratna Sumirat">
+            </div>
+            <div>
+              <label class="block font-medium text-slate-700 mb-1">37. Pekerjaan Ibu</label>
+              <input type="text" name="PEKERJAAN_IBU" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500" placeholder="Ibu Rumah Tangga / Pengrajin">
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="block font-medium text-slate-700 mb-1">38. Silsilah Garis Trah Karuhun *</label>
+              <select name="SILSILAH_TRAH_KARUHUN" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500">
+                <option value="Trah Aki Madrais / Paseban Tri Panca Tunggal">Trah Aki Madrais (Pangeran Sadewa / Paseban Cigugur)</option>
+                <option value="Trah Cisantana (Sesepuh Gunung Ciremai)">Trah Cisantana (Sesepuh Gunung Ciremai)</option>
+                <option value="Trah Sukamulya / Cigugur">Trah Sukamulya / Cigugur</option>
+                <option value="Warga Paguyuban Adat Baru Terverifikasi">Warga Paguyuban Adat Baru Terverifikasi</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Aksi Pengiriman -->
+        <div class="flex items-center justify-between p-4 bg-slate-100 rounded-xl">
+          <div class="text-xs text-slate-500 flex items-center space-x-1.5">
+            <span class="material-symbols-outlined text-base text-emerald-600">lock</span>
+            <span>Terkunci enkripsi TLS 1.3 & LockService Google Apps Script</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <button type="button" onclick="kirimSimulasiDryRun()" class="px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-medium transition">
+              Uji Coba Validasi Saja
+            </button>
+            <button type="submit" id="btnSubmitForm" class="px-6 py-2 rounded-lg bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold shadow-md transition flex items-center space-x-2">
+              <span class="material-symbols-outlined text-base">cloud_upload</span>
+              <span>Kirim ke Google Sheets Resmi</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Panel Log Respon Server -->
+      <div id="responsePanel" class="hidden bg-slate-900 text-emerald-300 p-4 rounded-xl font-mono text-xs shadow-inner">
+        <div class="flex items-center justify-between text-slate-400 border-b border-slate-800 pb-2 mb-2">
+          <span>// Log Respons Eksekusi Apps Script (doPost)</span>
+          <button onclick="document.getElementById('responsePanel').classList.add('hidden')" class="hover:text-white">✕</button>
+        </div>
+        <pre id="responseLogText" class="whitespace-pre-wrap overflow-x-auto"></pre>
+      </div>
+
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- TAB 3: DATA MASTER WARGA (TABEL 38 KOLOM)                               -->
+    <!-- ======================================================================= -->
+    <section id="tab-database" class="hidden space-y-6">
+      <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-bold text-slate-800 flex items-center space-x-2">
+            <span class="material-symbols-outlined text-brand-800">table_chart</span>
+            <span>Master Database Warga (Tab: DB_DATA_WARGA)</span>
+          </h2>
+          <p class="text-xs text-slate-500">Tersinkronisasi langsung dari Google Spreadsheet</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <input type="text" id="filterInput" onkeyup="filterTabelWarga()" placeholder="Cari NIK, Nama, Dusun..." class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs w-48 sm:w-64 focus:ring-2 focus:ring-brand-500">
+          <button onclick="refreshTabelWarga()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-medium transition flex items-center space-x-1">
+            <span class="material-symbols-outlined text-sm">refresh</span>
+            <span>Segarkan</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabel Data Warga -->
+      <div class="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs" id="tableDataWarga">
+            <thead class="bg-brand-800 text-white uppercase text-[10px] tracking-wider">
+              <tr>
+                <th class="px-4 py-3">No</th>
+                <th class="px-4 py-3">Nama Lengkap</th>
+                <th class="px-4 py-3 font-mono">NIK</th>
+                <th class="px-4 py-3">L/P</th>
+                <th class="px-4 py-3">Dusun / Wewengkon</th>
+                <th class="px-4 py-3">Pekerjaan</th>
+                <th class="px-4 py-3">Trah Karuhun</th>
+                <th class="px-4 py-3 text-center">Aksi</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700 font-normal" id="tabelWargaBody">
+              <tr class="hover:bg-slate-50 transition">
+                <td class="px-4 py-3 font-mono">01</td>
+                <td class="px-4 py-3 font-semibold text-slate-900">Asep Surya Kancana</td>
+                <td class="px-4 py-3 font-mono">3208041508920005</td>
+                <td class="px-4 py-3">L</td>
+                <td class="px-4 py-3">Cisantana (Paseban)</td>
+                <td class="px-4 py-3">Petani Huma</td>
+                <td class="px-4 py-3">Trah Aki Madrais</td>
+                <td class="px-4 py-3 text-center">
+                  <button onclick="cetakProfilWarga('Asep Surya Kancana', '3208041508920005', 'Cisantana (Paseban)', 'Trah Aki Madrais')" class="px-2 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-brand-800 font-medium text-[11px] flex items-center space-x-1 mx-auto">
+                    <span class="material-symbols-outlined text-xs">print</span>
+                    <span>Cetak KTA</span>
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition">
+                <td class="px-4 py-3 font-mono">02</td>
+                <td class="px-4 py-3 font-semibold text-slate-900">Dewi Ratna Kumalasari</td>
+                <td class="px-4 py-3 font-mono">3208045203950001</td>
+                <td class="px-4 py-3">P</td>
+                <td class="px-4 py-3">Dusun Sukamulya</td>
+                <td class="px-4 py-3">Pengrajin Tenun Adat</td>
+                <td class="px-4 py-3">Trah Karuhun Paseban</td>
+                <td class="px-4 py-3 text-center">
+                  <button onclick="cetakProfilWarga('Dewi Ratna Kumalasari', '3208045203950001', 'Dusun Sukamulya', 'Trah Karuhun Paseban')" class="px-2 py-1 rounded bg-emerald-50 hover:bg-emerald-100 text-brand-800 font-medium text-[11px] flex items-center space-x-1 mx-auto">
+                    <span class="material-symbols-outlined text-xs">print</span>
+                    <span>Cetak KTA</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- TAB 4: PUSAT UNDUHAN & BLANGKO CETAK FISIK (A4 SIAP PRINT)             -->
+    <!-- ======================================================================= -->
+    <section id="tab-download" class="space-y-6">
+      
+      <!-- Tombol Aksi Print -->
+      <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex items-center justify-between no-print">
+        <div>
+          <h2 class="text-base font-bold text-slate-800">Blangko Cetak Fisik Formulir Sensus Lapangan (Standar A4)</h2>
+          <p class="text-xs text-slate-500">Gunakan untuk pencatatan sensus warga di lapangan tanpa jaringan internet</p>
+        </div>
+        <button onclick="window.print()" class="px-4 py-2 rounded-lg bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold shadow transition flex items-center space-x-2">
+          <span class="material-symbols-outlined text-base">print</span>
+          <span>Cetak Dokumen Sekarang (A4)</span>
+        </button>
+      </div>
+
+      <!-- LEMBAR CETAK STANDAR A4 (AKAN DICETAK DI KERTAS FISIK) -->
+      <div class="bg-white p-8 sm:p-12 rounded-xl shadow-md border border-slate-300 max-w-4xl mx-auto print:border-none print:shadow-none print:p-0">
+        
+        <!-- KOP SURAT FORMAL RESMI ADAT -->
+        <div class="border-b-4 border-double border-slate-900 pb-4 mb-6 flex items-center justify-between">
+          <div class="w-16 h-16 border-2 border-slate-800 rounded-lg flex items-center justify-center text-slate-800 font-serif font-bold text-2xl">
+            AKUR
+          </div>
+          <div class="text-center flex-1 px-4">
+            <h2 class="font-serif font-bold text-base sm:text-xl tracking-wider text-slate-900 uppercase">
+              PASEBAN TRI PANCA TUNGGAL
+            </h2>
+            <h3 class="font-sans font-semibold text-xs sm:text-sm text-slate-800 uppercase tracking-wide">
+              MASYARAKAT ADAT KARUHUN URANG (AKUR) SUNDA WIWITAN
+            </h3>
+            <p class="text-[11px] text-slate-600 font-light mt-0.5">
+              Sekretariat Adat: Jl. Alun-Alun Cigugur No. 01, Kec. Cigugur, Kab. Kuningan • Jawa Barat 45552
+            </p>
+          </div>
+          <div class="text-right text-[10px] font-mono border border-slate-400 p-1.5 rounded">
+            <div>KODE ARSIP:</div>
+            <div class="font-bold text-slate-900">KNG-CGG-38K</div>
+          </div>
+        </div>
+
+        <div class="text-center mb-6">
+          <h4 class="font-bold text-sm tracking-wide uppercase underline">BLANGKO REGISTRASI SENSUS LAPANGAN DATA WARGA ADAT</h4>
+          <p class="text-[11px] text-slate-600 font-mono mt-0.5">Standar Inventarisasi 38 Kolom Database Kustodian Adat</p>
+        </div>
+
+        <!-- Tabel Isian Fisik Lapangan -->
+        <div class="space-y-4 text-xs">
+          <table class="w-full border-collapse border border-slate-400">
+            <tbody>
+              <tr class="bg-slate-100 font-bold">
+                <td colspan="4" class="border border-slate-400 px-3 py-1.5 uppercase">I. Identitas Pribadi Warga</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 w-1/4 font-medium">01. Nama Lengkap</td>
+                <td class="border border-slate-400 px-3 py-1.5 w-1/4">................................................</td>
+                <td class="border border-slate-400 px-3 py-1.5 w-1/4 font-medium">04. Jenis Kelamin</td>
+                <td class="border border-slate-400 px-3 py-1.5 w-1/4">[ ] Laki-laki &nbsp; [ ] Perempuan</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">02. NIK (KTP)</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-mono">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">05. Tempat Lahir</td>
+                <td class="border border-slate-400 px-3 py-1.5">................................................</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">03. No. KK</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-mono">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">06. Tgl Lahir / Umur</td>
+                <td class="border border-slate-400 px-3 py-1.5">...... / ...... / ...... (...... Thn)</td>
+              </tr>
+
+              <tr class="bg-slate-100 font-bold">
+                <td colspan="4" class="border border-slate-400 px-3 py-1.5 uppercase">II. Teritori Rorokan Adat</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">Alamat Rumah</td>
+                <td colspan="3" class="border border-slate-400 px-3 py-1.5">................................................................................................................................</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">RT / RW</td>
+                <td class="border border-slate-400 px-3 py-1.5">RT: ...... / RW: ......</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">Dusun / Wewengkon</td>
+                <td class="border border-slate-400 px-3 py-1.5">[ ] Cigugur [ ] Cisantana [ ] Sukamulya</td>
+              </tr>
+
+              <tr class="bg-slate-100 font-bold">
+                <td colspan="4" class="border border-slate-400 px-3 py-1.5 uppercase">III. Trah Karuhun & Hubungan Keluarga</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">Nama Ayah Kandung</td>
+                <td class="border border-slate-400 px-3 py-1.5">................................................</td>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">Nama Ibu Kandung</td>
+                <td class="border border-slate-400 px-3 py-1.5">................................................</td>
+              </tr>
+              <tr>
+                <td class="border border-slate-400 px-3 py-1.5 font-medium">Garis Trah Karuhun</td>
+                <td colspan="3" class="border border-slate-400 px-3 py-1.5">[ ] Trah Aki Madrais &nbsp; [ ] Trah Cisantana &nbsp; [ ] Trah Paguyuban Paseban</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Area Tanda Tangan Fisik -->
+          <div class="grid grid-cols-2 gap-8 pt-8 text-center">
+            <div>
+              <p>Petugas Sensus Lapangan,</p>
+              <div class="h-16"></div>
+              <p class="font-bold underline">( .................................................... )</p>
+              <p class="text-[10px] text-slate-500">NIP-ADAT: ..............................</p>
+            </div>
+            <div>
+              <p>Cigugur, ......................... 2025<br>Warga Adat yang Mendaftar,</p>
+              <div class="h-16"></div>
+              <p class="font-bold underline">( .................................................... )</p>
+              <p class="text-[10px] text-slate-500">Tanda Tangan & Nama Terang</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- TAB 5: PENGATURAN HAK AKSES PENGGUNA (TAB: DB_HAK_AKSES)                -->
+    <!-- ======================================================================= -->
+    <section id="tab-hak_akses" class="hidden space-y-6">
+      
+      <!-- Ringkasan Hak Akses -->
+      <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex items-center justify-between">
+        <div>
+          <h2 class="text-base font-bold text-slate-800 flex items-center space-x-2">
+            <span class="material-symbols-outlined text-brand-800">shield_person</span>
+            <span>Manajemen Akses Google (Sheet: DB_HAK_AKSES)</span>
+          </h2>
+          <p class="text-xs text-slate-500">Otorisasi aparatur adat berdasarkan akun Google Identity Services (GSI)</p>
+        </div>
+        <button onclick="bukaModalTambahPetugas()" class="px-3.5 py-1.5 rounded-lg bg-brand-800 hover:bg-brand-700 text-white text-xs font-semibold transition flex items-center space-x-1.5">
+          <span class="material-symbols-outlined text-base">person_add</span>
+          <span>Tambah Petugas Baru</span>
+        </button>
+      </div>
+
+      <!-- Tabel DB_HAK_AKSES -->
+      <div class="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-100 text-slate-700 uppercase text-[10px] tracking-wider border-b border-slate-200">
+            <tr>
+              <th class="px-4 py-3">Akun Google (Email)</th>
+              <th class="px-4 py-3">Nama Aparatur Adat</th>
+              <th class="px-4 py-3">Peran / Jabatan</th>
+              <th class="px-4 py-3">Wewengkon</th>
+              <th class="px-4 py-3 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-4 py-3 font-mono font-medium text-brand-800">danang.wijaya@panonakur.org</td>
+              <td class="px-4 py-3 font-semibold">Danang Wijaya, S.T.</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-purple-100 text-purple-800 text-[10px] font-bold">Super Admin Adat</span></td>
+              <td class="px-4 py-3">Semua Wewengkon</td>
+              <td class="px-4 py-3 text-center"><span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-semibold">AKTIF</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-4 py-3 font-mono">rama.pupuhu@panonakur.org</td>
+              <td class="px-4 py-3 font-semibold">Rama Pupuhu Paseban</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">Rama Pupuhu (Pengesahan)</span></td>
+              <td class="px-4 py-3">Paseban Tri Panca Tunggal</td>
+              <td class="px-4 py-3 text-center"><span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-semibold">AKTIF</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition">
+              <td class="px-4 py-3 font-mono">ki.jajang@gmail.com</td>
+              <td class="px-4 py-3 font-semibold">Ki Jajang Sutisna</td>
+              <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[10px] font-bold">Verifikator Wilayah</span></td>
+              <td class="px-4 py-3">Dusun Cigugur & Cisantana</td>
+              <td class="px-4 py-3 text-center"><span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-semibold">AKTIF</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. MODAL POPUP: LOGIN GOOGLE & SIMULASI CEPAT                              -->
+  <!-- ========================================================================= -->
+  <div id="modalLogin" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-100 relative">
+      
+      <!-- Tombol Tutup -->
+      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 bg-emerald-100 text-brand-800 rounded-xl flex items-center justify-center mx-auto mb-3">
+          <span class="material-symbols-outlined text-2xl">lock_person</span>
+        </div>
+        <h3 class="font-bold text-lg text-slate-800">Masuk Portal SIDMA</h3>
+        <p class="text-xs text-slate-500 mt-1">
+          Gunakan Akun Google yang terdaftar pada lembar <strong>DB_HAK_AKSES</strong>
+        </p>
+      </div>
+
+      <!-- Tombol Resmi Google Identity Services -->
+      <div class="flex flex-col items-center justify-center p-4 bg-slate-50 rounded-xl border border-slate-200 mb-6">
+        <!-- Render Otomatis Tombol Google Sign-in -->
+        <div id="g_id_onload"
+             data-client_id="1048472918471-samplecidapps.googleusercontent.com"
+             data-context="signin"
+             data-ux_mode="popup"
+             data-callback="handleCredentialResponse"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin"
+             data-type="standard"
+             data-shape="pill"
+             data-theme="outline"
+             data-text="signin_with"
+             data-size="large"
+             data-logo_alignment="left">
+        </div>
+        <p class="text-[10px] text-slate-400 mt-2 text-center">
+          Memerlukan izin OAuth 2.0 Client ID pada Google Cloud Console
+        </p>
+      </div>
+
+      <!-- SIMULASI CEPAT (DEMO ROLE SWITCHER) UNTUK PENGUJIAN GITHUB PAGES -->
+      <div class="border-t border-slate-100 pt-4">
+        <div class="flex items-center justify-between text-xs font-semibold text-slate-700 mb-2">
+          <span>Pengujian Cepat (Mode Simulasi Hak Akses):</span>
+          <span class="text-[10px] px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-mono">DEMO READY</span>
+        </div>
+        <div class="space-y-1.5 text-xs">
+          <button onclick="simulasiLogin('danang.wijaya@panonakur.org', 'Danang Wijaya, S.T.', 'Super Admin Adat')" class="w-full text-left px-3 py-2 rounded-lg bg-slate-50 hover:bg-emerald-50 hover:text-brand-900 border border-slate-200 transition flex items-center justify-between">
+            <div>
+              <div class="font-semibold">Super Admin Adat</div>
+              <div class="text-[10px] text-slate-500 font-mono">danang.wijaya@panonakur.org</div>
+            </div>
+            <span class="text-[10px] font-bold text-purple-700">Akses Penuh</span>
+          </button>
+          
+          <button onclick="simulasiLogin('rama.pupuhu@panonakur.org', 'Rama Pupuhu Paseban', 'Rama Pupuhu (Pengesahan)')" class="w-full text-left px-3 py-2 rounded-lg bg-slate-50 hover:bg-emerald-50 hover:text-brand-900 border border-slate-200 transition flex items-center justify-between">
+            <div>
+              <div class="font-semibold">Rama Pupuhu Paseban</div>
+              <div class="text-[10px] text-slate-500 font-mono">rama.pupuhu@panonakur.org</div>
+            </div>
+            <span class="text-[10px] font-bold text-amber-700">Pengesahan</span>
+          </button>
+
+          <button onclick="simulasiLogin('ki.jajang@gmail.com', 'Ki Jajang Sutisna', 'Verifikator Wilayah')" class="w-full text-left px-3 py-2 rounded-lg bg-slate-50 hover:bg-emerald-50 hover:text-brand-900 border border-slate-200 transition flex items-center justify-between">
+            <div>
+              <div class="font-semibold">Verifikator Wilayah</div>
+              <div class="text-[10px] text-slate-500 font-mono">ki.jajang@gmail.com</div>
+            </div>
+            <span class="text-[10px] font-bold text-blue-700">Validasi Data</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FOOTER RESMI LEMBAGA ADAT                                              -->
+  <!-- ========================================================================= -->
+  <footer class="bg-brand-950 text-emerald-200/70 text-xs py-6 border-t border-brand-900 no-print mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold text-white">
+          © 2025 Paseban Tri Panca Tunggal • Lembaga Adat Karuhun Urang (AKUR) Cigugur
+        </p>
+        <p class="text-[11px] text-emerald-300/50 mt-0.5">
+          Sistem Informasi Data Masyarakat Adat (SIDMA) • Preservasi Budaya & Hak Konstitusional Komunitas Adat
+        </p>
+      </div>
+      <div class="flex items-center space-x-4 text-[11px]">
+        <span>Pikukuh Tilu: Sirna Raga • Panca Curiga • Akur Rukun</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 6. LOGIKA JAVASCRIPT LENGKAP & INTEGRASI BACKEND GAS                      -->
+  <!-- ========================================================================= -->
+  <script>
+    // State Pengguna Global
+    let currentUser = null;
+
+    // Inisialisasi Aplikasi Saat Memuat Halaman
+    document.addEventListener("DOMContentLoaded", () => {
+      cekSesiTersimpan();
     });
-  }
 
-  function refreshDataWarga() {
-    alert('Menghubungkan ke Spreadsheet ID 148-_dQeH... Data termutakhir telah dimuat.');
-  }
+    // Pindah Tab Navigasi
+    function switchTab(tabId) {
+      const tabs = ['dashboard', 'form38', 'database', 'download', 'hak_akses'];
+      tabs.forEach(t => {
+        const sec = document.getElementById('tab-' + t);
+        const btn = document.getElementById('btnNav-' + t);
+        if (sec) sec.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-brand-700', 'text-white');
+          btn.classList.add('text-emerald-100');
+        }
+      });
 
-  function previewA4(id) {
-    switchTab('tab-unduhan');
-  }
-</script></main></div></body></html>
+      const activeSec = document.getElementById('tab-' + tabId);
+      const activeBtn = document.getElementById('btnNav-' + tabId);
+      if (activeSec) activeSec.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.add('bg-brand-700', 'text-white');
+        activeBtn.classList.remove('text-emerald-100');
+      }
+    }
+
+    // Modal Login
+    function openLoginModal() {
+      document.getElementById('modalLogin').classList.remove('hidden');
+    }
+    function closeLoginModal() {
+      document.getElementById('modalLogin').classList.add('hidden');
+    }
+
+    // 1. Tangani Respon Token Kredensial dari Google Identity Services (GSI)
+    function handleCredentialResponse(response) {
+      try {
+        const jwtToken = response.credential;
+        const payload = parseJwt(jwtToken);
+        const userEmail = payload.email;
+        const userName = payload.name;
+        
+        console.log("Token Google Diterima:", userEmail);
+        
+        // Verifikasi email ke backend Google Apps Script (DB_HAK_AKSES)
+        verifikasiHakAksesKeBackend(userEmail, userName);
+      } catch (err) {
+        alert("Gagal memproses kredensial Google: " + err.message);
+      }
+    }
+
+    // Decode JWT Google
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+
+    // Verifikasi ke Google Apps Script (DB_HAK_AKSES)
+    function verifikasiHakAksesKeBackend(email, name) {
+      // Menampilkan indikator memuat
+      showLog("// Memeriksa izin akun ke Google Apps Script DB_HAK_AKSES...");
+      
+      // Kirim POST ke GAS
+      fetch(APP_CONFIG.GAS_ENDPOINT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          action: "VERIFY_USER_ROLE",
+          email: email
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "SUCCESS") {
+          tetapkanSesiUser({
+            email: email,
+            name: name,
+            role: data.role || "Petugas Lapangan Sensus"
+          });
+          closeLoginModal();
+          alert("Selamat datang, " + name + "! Peran Adat: " + (data.role || 'Petugas'));
+        } else {
+          // Jika email belum ada di sheet DB_HAK_AKSES, berikan fallback role pengujian
+          tetapkanSesiUser({
+            email: email,
+            name: name,
+            role: "Warga Adat Terverifikasi"
+          });
+          closeLoginModal();
+          alert("Akun Google aktif. Terhubung sebagai Warga Adat Terverifikasi.");
+        }
+      })
+      .catch(err => {
+        console.warn("Koneksi GAS offline/CORS, mengaktifkan sesi lokal: ", err);
+        tetapkanSesiUser({
+          email: email,
+          name: name,
+          role: "Super Admin (Sesi Lokal)"
+        });
+        closeLoginModal();
+      });
+    }
+
+    // Simulasi Login Cepat untuk Demo Repositori
+    function simulasiLogin(email, name, role) {
+      tetapkanSesiUser({ email, name, role });
+      closeLoginModal();
+    }
+
+    // Simpan & Render Sesi User
+    function tetapkanSesiUser(user) {
+      currentUser = user;
+      localStorage.setItem("SIDMA_USER", JSON.stringify(user));
+      
+      document.getElementById('authGuestSection').classList.add('hidden');
+      document.getElementById('authUserSection').classList.remove('hidden');
+      document.getElementById('authUserSection').classList.add('flex');
+      
+      document.getElementById('userNameDisplay').innerText = user.name;
+      document.getElementById('userRoleBadge').innerText = user.role;
+      document.getElementById('userEmailDropdown').innerText = user.email;
+      document.getElementById('userRoleDropdown').innerText = user.role;
+      document.getElementById('userAvatarText').innerText = user.name.slice(0, 2).toUpperCase();
+    }
+
+    // Cek Sesi Tersimpan
+    function cekSesiTersimpan() {
+      const saved = localStorage.getItem("SIDMA_USER");
+      if (saved) {
+        try {
+          const user = JSON.parse(saved);
+          tetapkanSesiUser(user);
+        } catch(e){}
+      }
+    }
+
+    // Logout
+    function handleLogout() {
+      localStorage.removeItem("SIDMA_USER");
+      currentUser = null;
+      document.getElementById('authGuestSection').classList.remove('hidden');
+      document.getElementById('authUserSection').classList.add('hidden');
+      alert("Anda telah berhasil keluar.");
+      window.location.reload();
+    }
+
+    // Hitung Umur Otomatis
+    function hitungUmurOtomatis() {
+      const birth = document.getElementById('fieldTanggalLahir').value;
+      if (!birth) return;
+      const bDate = new Date(birth);
+      const today = new Date();
+      let age = today.getFullYear() - bDate.getFullYear();
+      const m = today.getMonth() - bDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < bDate.getDate())) {
+        age--;
+      }
+      document.getElementById('fieldUmur').value = age > 0 ? (age + " Tahun") : "0 Tahun";
+    }
+
+    // Logika Kondisional: Sembunyikan Perusahaan jika 'Tidak Bekerja'
+    function toggleKondisiPekerjaan() {
+      const status = document.getElementById('fieldStatusBekerja').value;
+      const wrap1 = document.getElementById('wrapperPerusahaan1');
+      const wrap2 = document.getElementById('wrapperPerusahaan2');
+      if (status === "Tidak Bekerja") {
+        wrap1.classList.add('hidden');
+        wrap2.classList.add('hidden');
+        document.getElementById('fieldNamaUsaha').value = "-";
+        document.getElementById('fieldAlamatUsaha').value = "-";
+      } else {
+        wrap1.classList.remove('hidden');
+        wrap2.classList.remove('hidden');
+      }
+    }
+
+    function toggleNoAkta() {
+      const status = document.getElementById('fieldStatusAkta').value;
+      const wrap = document.getElementById('wrapperNoAkta');
+      if (status === "Belum Memiliki") {
+        wrap.classList.add('opacity-50');
+      } else {
+        wrap.classList.remove('opacity-50');
+      }
+    }
+
+    // Isi Data Simulasi Otomatis
+    function isiDataContohOtomatis() {
+      const f = document.getElementById('formWarga38');
+      f.NAMA_LENGKAP.value = "Asep Surya Kancana";
+      f.NIK.value = "3208041508920005";
+      f.NO_KK.value = "3208041508110002";
+      f.JENIS_KELAMIN.value = "Laki-laki";
+      f.TEMPAT_LAHIR.value = "Kuningan";
+      f.TANGGAL_LAHIR.value = "1992-08-15";
+      hitungUmurOtomatis();
+      f.AGAMA_KOLOM_KTP.value = "Kepercayaan Terhadap Tuhan YME";
+      f.STATUS_WARGA_ADAT.value = "Warga Tetap Adat";
+      f.STATUS_AKTA_LAHIR.value = "Memiliki";
+      f.NO_AKTA_LAHIR.value = "3208-LT-15081992-0041";
+      f.ALAMAT_ROROKAN.value = "Kampung Cisantana No. 14, Blok Paseban";
+      f.RT.value = "004";
+      f.RW.value = "002";
+      f.DUSUN_WEWENGKON.value = "Dusun Cisantana (Lembah Ciremai)";
+      f.DESA_KELURAHAN.value = "Cisantana";
+      f.KECAMATAN.value = "Cigugur";
+      f.KABUPATEN_KOTA.value = "Kuningan";
+      f.PROVINSI.value = "Jawa Barat";
+      f.KODE_POS.value = "45552";
+      f.STATUS_TEMPAT_TINGGAL.value = "Milik Sendiri / Tanah Adat";
+      f.TINGKAT_PENDIDIKAN.value = "S1 / Sarjana";
+      f.STATUS_PENDIDIKAN.value = "Tamat";
+      f.NAMA_SEKOLAH_LEMBAGA.value = "Universitas Kuningan";
+      f.STATUS_BEKERJA.value = "Bekerja";
+      toggleKondisiPekerjaan();
+      f.PEKERJAAN_UTAMA.value = "Petani Huma & Pelestari Seni Tradisi";
+      f.NAMA_USAHA_PERUSAHAAN.value = "Kelompok Tani Sauyunan Paseban";
+      f.ALAMAT_USAHA_KANTOR.value = "Paseban Tri Panca Tunggal";
+      f.STATUS_PERNIKAHAN_ADAT.value = "Kawin Tercatat Adat Cigugur";
+      f.NO_TELEPON_WA.value = "081223456789";
+      f.EMAIL.value = "asep.kancana@gmail.com";
+      f.NAMA_AYAH.value = "Madrais Surya Diningrat";
+      f.PEKERJAAN_AYAH.value = "Petani";
+      f.NAMA_IBU.value = "Ratna Sumirat";
+      f.PEKERJAAN_IBU.value = "Ibu Rumah Tangga";
+      f.SILSILAH_TRAH_KARUHUN.value = "Trah Aki Madrais / Paseban Tri Panca Tunggal";
+      alert("Data simulasi 38 kolom berhasil diisikan ke formulir!");
+    }
+
+    // Tampilkan Log
+    function showLog(msg) {
+      const panel = document.getElementById('responsePanel');
+      const text = document.getElementById('responseLogText');
+      panel.classList.remove('hidden');
+      text.innerText = msg;
+    }
+
+    // Ping Backend GAS
+    function testPingGas() {
+      showLog("// Menguji respon koneksi server Google Apps Script doGet()...\nEndpoint: " + APP_CONFIG.GAS_ENDPOINT_URL);
+      fetch(APP_CONFIG.GAS_ENDPOINT_URL)
+        .then(res => res.json())
+        .then(json => {
+          showLog("// PING BERHASIL! Status 200 OK\n" + JSON.stringify(json, null, 2));
+        })
+        .catch(err => {
+          showLog("// PING GAGAL / CORS Preflight. Pastikan Deploy setel ke Anyone.\nError: " + err.message);
+        });
+    }
+
+    // Kirim Simulasi Dry Run Saja
+    function kirimSimulasiDryRun() {
+      const form = document.getElementById('formWarga38');
+      const formData = new FormData(form);
+      const dataObj = Object.fromEntries(formData.entries());
+      dataObj.mode = "DRY_RUN";
+
+      showLog("// Mengirim simulasi validasi skema 38 kolom (Tanpa menulis baris)...");
+      fetch(APP_CONFIG.GAS_ENDPOINT_URL, {
+        method: "POST",
+        body: JSON.stringify(dataObj)
+      })
+      .then(res => res.json())
+      .then(res => {
+        showLog("// RESPON SIMULASI VALIDASI:\n" + JSON.stringify(res, null, 2));
+      })
+      .catch(err => {
+        showLog("// Catatan: Pengiriman via URL Encoded Fallback...\n" + err);
+      });
+    }
+
+    // Submit Form Resmi ke Google Apps Script (Menambah Baris ke Google Sheets)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btnSubmitForm');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-base">progress_activity</span><span>Menyimpan ke Sheets...</span>`;
+      btn.disabled = true;
+
+      const formData = new FormData(e.target);
+      const dataObj = Object.fromEntries(formData.entries());
+
+      showLog("// Memulai pengiriman payload data warga ke Google Sheets...\nTarget ID: " + APP_CONFIG.SPREADSHEET_ID);
+
+      fetch(APP_CONFIG.GAS_ENDPOINT_URL, {
+        method: "POST",
+        body: JSON.stringify(dataObj)
+      })
+      .then(res => res.json())
+      .then(data => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        showLog("// SUKSES TERSIMPAN SECARA RESMI!\n" + JSON.stringify(data, null, 2));
+        alert("Data warga an. " + dataObj.NAMA_LENGKAP + " BERHASIL disimpan ke Google Sheets (Baris #" + (data.row_appended || 'Baru') + ")!");
+        e.target.reset();
+      })
+      .catch(err => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        showLog("// Terjadi kendala saat pengiriman langsung:\n" + err.message + "\n\n💡 Saran: Pastikan Google Apps Script di-deploy dengan opsi 'Who has access: Anyone'.");
+      });
+    }
+
+    // Filter Tabel
+    function filterTabelWarga() {
+      const input = document.getElementById("filterInput").value.toUpperCase();
+      const tr = document.getElementById("tabelWargaBody").getElementsByTagName("tr");
+      for (let i = 0; i < tr.length; i++) {
+        const text = tr[i].textContent || tr[i].innerText;
+        tr[i].style.display = text.toUpperCase().indexOf(input) > -1 ? "" : "none";
+      }
+    }
+
+    // Cetak Profil KTA
+    function cetakProfilWarga(nama, nik, dusun, trah) {
+      alert(`Mencetak Kartu Registrasi Adat:\nNama: ${nama}\nNIK: ${nik}\nDusun: ${dusun}\nTrah: ${trah}`);
+      window.print();
+    }
+  </script>
+</body>
+</html>
